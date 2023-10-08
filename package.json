@@ -1,0 +1,16 @@
+{
+  "name": "yomua-technology-changes-life",
+  "version": "0.0.1",
+  "description": "科技改变生活",
+  "main": "index.js",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "yomua",
+  "license": "ISC"
+}
