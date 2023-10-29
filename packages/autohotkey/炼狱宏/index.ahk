@@ -5,8 +5,9 @@ global PI = 3.14159265359 ; Autohotkey 没有 PI, 所以需要自定义
 ; true: 开启, false: 不开启
 ; purgatory: 炼狱宏
 global keyDescription := {purgatory: false}
-global singleClickTime := {minTime:80,maxTime:130} ; 单位 ms, 延迟单轮点击时间。 值的范围越小，单轮点击就越快
-global clickIntervalTime := {minTime:10,maxTime:25} ; 单位 ms, 一次点击结束后，延迟后再继续下一轮。 值的范围越小，下一次点击的间隔就越小
+; 以下配置都不要设置太小，否则容易被检测。
+global singleClickTime := { minTime:160, maxTime:250} ; 单位 ms, 延迟单轮点击时间。 值的范围越小，单轮点击就越快
+global clickIntervalTime := { minTime:18, maxTime:25 } ; 单位 ms, 一次点击结束后，延迟后再继续下一轮。 值的范围越小，下一次点击的间隔就越小
 
 ; 定义生成正态分布的随机数函数
 ; mean: 均值； stdDev: 标准差
