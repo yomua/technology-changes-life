@@ -1,1 +1,1 @@
-technology changes life.
+# 技术改变生活

@@ -13,12 +13,16 @@ let {
 
 let storage = storages.create("children_of_the_light_music");
 
+// 用于坐标修改
+// 显示当前是第几个键
 const coordinateModifyTextView = floaty.rawWindow(
   <frame gravity="center">
     <text textSize="22sp" textColor="#dd7694" id="coordinateModifyTextId" />
   </frame>
 );
 
+// 用于坐标修改
+// 创建一个 canvas, 然后监听 canvas 上的按压事件
 const canvasView = floaty.rawWindow(
   <vertical>
     <canvas id="canvasId" layout_weight="1" />
@@ -29,6 +33,7 @@ isFloatyWindowVisible(canvasView, false);
 
 isFloatyWindowVisible(coordinateModifyTextView, false);
 
+// 使用 canvas 获取坐标
 // 存储用户按15个键的位置 => { key: MUSIC_KEY_PREFIX + 1~15, value: '100,100' }
 function getCoordinateWithCanvas() {
   if (!canvasView || !canvasView.canvasId) {
@@ -98,9 +103,11 @@ const functionStrategy = {
       }
 
       const startPlayer = SRC_DIR + "/script/startPlayer.js";
-      // 结束上一个 startPlayer.js 的执行
+
+      // 先结束上一个 startPlayer.js 的执行
       emitSpecifiedScriptEvent(startPlayer, "closePlayMusic");
 
+      // 再执行本次的 startPlayer.js
       runScriptWithVariable(startPlayer, {
         keyData: files.read(
           ASSET_DIR + "/" + musicOptions[selectedIndex].split(": ")[1] + ".json"

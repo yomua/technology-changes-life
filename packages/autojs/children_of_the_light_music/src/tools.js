@@ -21,7 +21,7 @@ function getXYForStorage(value) {
   };
 }
 
-/**
+/** 控制指定的 view 是否可见
  *
  * @param { floatyWindow } view
  * @param { boolean } visible
@@ -84,19 +84,26 @@ function setViewDrag(view, controlComponent, onClick) {
   // 按下时手指在屏幕的相对坐标
   let x = 0,
     y = 0;
+
   // 按下时手指在悬浮窗的相对坐标
   let viewX, viewY;
 
+  // 监听指定控件触摸事件
   controlComponent.setOnTouchListener(function (_, event) {
     switch (event.getAction()) {
+      // 按下手指
       case event.ACTION_DOWN:
         // 当前触摸点离屏幕左上角的 x/y 轴距离
         x = event.getRawX();
         y = event.getRawY();
+
         // 当前触摸点到当前触摸组件左上角的 x/y 轴距离
         viewX = view.getX();
         viewY = view.getY();
+
         return true;
+
+      // 移动
       case event.ACTION_MOVE:
         // 移动手指时调整悬浮窗位置
         view.setPosition(
@@ -106,6 +113,8 @@ function setViewDrag(view, controlComponent, onClick) {
         );
 
         return true;
+
+      // 抬起手指
       case event.ACTION_UP:
         // 手指弹起时如果偏移很小则判断为点击
         if (
@@ -114,6 +123,7 @@ function setViewDrag(view, controlComponent, onClick) {
         ) {
           onClick(event);
         }
+
         return true;
     }
     return true;
