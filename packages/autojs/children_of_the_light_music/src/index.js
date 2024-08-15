@@ -2,7 +2,7 @@
  *   Copyright (c) 2022 yomua. All rights reserved.
  */
 
-// 入口文件的变量属于全局共享。
+// 入口文件的变量属于全局共享。(eval 问题)
 let SRC_DIR = "/sdcard/children_of_the_light_music/src";
 
 let INDEX_ROOT_OPTIONS = ["1.开始弹奏", "2.坐标修改", "3.退出脚本"];
@@ -11,8 +11,10 @@ let { useFunctionStrategy } = require(SRC_DIR + "/strategy.js");
 
 let { setViewDrag } = require(SRC_DIR + "/tools.js");
 
+// 是否开启了无障碍
 auto();
 
+// 创建 UI
 const scriptIconView = floaty.rawWindow(
   <img
     id="scriptIconId"
@@ -27,7 +29,7 @@ scriptIconView.setPosition(0, device.width ? device.width / 2 : 500);
 
 setInterval(() => {}, 1000);
 
-setViewDrag(scriptIconView, scriptIconView.scriptIconId,function () {
+setViewDrag(scriptIconView, scriptIconView.scriptIconId, function () {
   dialogs.select("请选择功能", INDEX_ROOT_OPTIONS, (selectedIndex) => {
     if (selectedIndex === -1) {
       return;
@@ -46,6 +48,3 @@ setViewDrag(scriptIconView, scriptIconView.scriptIconId,function () {
     }
   });
 });
-
-
-
