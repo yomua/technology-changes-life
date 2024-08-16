@@ -88,6 +88,7 @@ function getCoordinateWithCanvas() {
 
 const functionStrategy = {
   开始弹奏: () => {
+    // 读取 asset/ *.json 文件
     const musicList = files.listDir(ASSET_DIR, function (name) {
       return name.endsWith(".json") && files.isFile(ASSET_DIR + "/" + name);
     });
@@ -102,6 +103,8 @@ const functionStrategy = {
         return;
       }
 
+      const musicName = musicOptions[selectedIndex].split(": ")[1];
+
       const startPlayer = SRC_DIR + "/script/startPlayer.js";
 
       // 先结束上一个 startPlayer.js 的执行
@@ -109,12 +112,8 @@ const functionStrategy = {
 
       // 再执行本次的 startPlayer.js
       runScriptWithVariable(startPlayer, {
-        keyData: files.read(
-          ASSET_DIR + "/" + musicOptions[selectedIndex].split(": ")[1] + ".json"
-        ),
-        lrcData: files.read(
-          ASSET_DIR + "/" + musicOptions[selectedIndex].split(": ")[1] + ".lrc"
-        ),
+        keyData: files.read(ASSET_DIR + "/" + musicName + ".json"),
+        lrcData: files.read(ASSET_DIR + "/" + musicName + ".lrc"),
       });
     });
   },

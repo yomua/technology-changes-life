@@ -1,3 +1,5 @@
+// 按下指定的键
+
 const { keyData: musicData } = engines.myEngine().execArgv;
 
 if (!musicData) {
@@ -51,6 +53,7 @@ function runPress({ data }) {
 
     if (typeof word[0] === "number") {
       sleep(word[0]);
+      // 延迟操作结束后, 只保留需要按下的键
       word = word.filter((v) => typeof v !== "number");
     }
 

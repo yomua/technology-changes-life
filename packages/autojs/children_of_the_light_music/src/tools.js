@@ -166,15 +166,18 @@ function emitSpecifiedScriptEvent(dir, eventName, config) {
 }
 
 function parseLrc(lrc) {
+  // 会返回的数据结构
   const oLRC = {
-    ti: "", //歌曲名
-    ar: "", //演唱者
-    al: "", //专辑名
-    by: "", //歌词制作人
-    offset: 0, //时间补偿值，单位毫秒，用于调整歌词整体位置
-    total: 0, // 总时间
-    ms: [], //歌词数组{t:时间,c:歌词}
+    ti: "", // 歌曲名
+    ar: "", // 演唱者
+    al: "", // 专辑名
+    by: "", // 歌词制作人
+    offset: 0, // 时间补偿值，单位毫秒，用于调整歌词整体位置
+    total: 0, // 总时间, 单位 s
+    //  [{ time: '2.230', lyric: '词：周仁' }, { time: '15.500', lyric: '填不满半排观众的电影' }]
+    ms: [], // 歌词数组 {time:时间 s, lyric:歌词}
   };
+
   if (!lrc || lrc.length === 0) {
     toast("lrc 不存在");
     return;
@@ -197,25 +200,28 @@ function parseLrc(lrc) {
       let arr = lrcs[i].match(/\[(\d+:.+?)\]/g); //提取时间字段，可能有多个
       let start = 0;
       for (let k in arr) {
-        start += arr[k].length; //计算歌词位置
+        start += arr[k].length; // 计算歌词位置
       }
-      let content = lrcs[i].substring(start); //获取歌词内容
+      let content = lrcs[i].substring(start); // 获取歌词内容
       for (let k in arr) {
         let t = arr[k].substring(1, arr[k].length - 1); //取[]间的内容
         let s = t.split(":"); //分离:前后文字
         oLRC.ms.push({
-          //对象{t:时间,c:歌词}加入ms数组
+          //对象 {time:时间, lyric:歌词} push 进 ms 数组
           time: (parseFloat(s[0]) * 60 + parseFloat(s[1])).toFixed(3),
           lyric: content,
         });
       }
     }
   }
-  //按时间顺序排序
+  // 按时间顺序排序
   oLRC.ms.sort(function (a, b) {
     return a.time - b.time;
   });
+
+  // 从最后一个歌词, 得到总时间
   oLRC.total = +oLRC.ms[oLRC.ms.length - 1].time;
+
   return oLRC;
 }
 
