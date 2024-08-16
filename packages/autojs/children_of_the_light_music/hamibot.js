@@ -1,4 +1,4 @@
-const dir = "/sdcard/children_of_the_light_music/src/index.js";
+const dir = `${srcDir}/index.js`;
 
 if (files.exists(dir)) {
   eval(files.read(dir));

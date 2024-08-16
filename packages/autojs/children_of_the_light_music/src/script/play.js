@@ -9,9 +9,9 @@ if (!musicData) {
 
 let storage = storages.create("children_of_the_light_music");
 
-let SRC_DIR = "/sdcard/children_of_the_light_music/src";
+let SRC_DIR = "/storage/emulated/0/children_of_the_light_music/src";
 
-let { MUSIC_KEY_PREFIX } = require(SRC_DIR + "/constant.js");
+let { musicKeyPrefix } = require(SRC_DIR + "/constant.js");
 
 let { getXYForStorage } = require(SRC_DIR + "/tools.js");
 
@@ -61,7 +61,7 @@ function runPress({ data }) {
       // key : 1,2,3,4 ~ 15
       let { delay, pressDuration, key } = obj;
 
-      const { x, y } = getXYForStorage(storage.get(MUSIC_KEY_PREFIX + key));
+      const { x, y } = getXYForStorage(storage.get(musicKeyPrefix + key));
 
       if (!delay) {
         delay = 0;

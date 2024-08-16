@@ -17,7 +17,7 @@ if (!keyData) {
   exit();
 }
 
-let SRC_DIR = "/sdcard/children_of_the_light_music/src";
+let SRC_DIR = "/storage/emulated/0/children_of_the_light_music/src";
 
 let {
   parseLrc,

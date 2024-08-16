@@ -1,4 +1,10 @@
+const rootDir = files.cwd()
+  ? files.cwd().replace("/Hamibot", "")
+  : "/storage/emulated/0";
+
 module.exports = {
-  MUSIC_KEY_PREFIX: "musicKey",
-  CLICK_SCREEN_TIMES: 15,
+  musicKeyPrefix: "musicKey",
+  clickScreenCount: 15,
+  srcDir: `${rootDir}/src`,
+  rootDir,
 };

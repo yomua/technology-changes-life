@@ -2,14 +2,15 @@
  *   Copyright (c) 2022 yomua. All rights reserved.
  */
 
-// 入口文件的变量属于全局共享。(eval 问题)
-let SRC_DIR = "/sdcard/children_of_the_light_music/src";
+const {
+  srcDir,
+} = require("/storage/emulated/0/children_of_the_light_music/src/constant.js");
 
-let INDEX_ROOT_OPTIONS = ["1.开始弹奏", "2.坐标修改", "3.退出脚本"];
+const INDEX_ROOT_OPTIONS = ["1.开始弹奏", "2.坐标修改", "3.退出脚本"];
 
-let { useFunctionStrategy } = require(SRC_DIR + "/strategy.js");
+const { useFunctionStrategy } = require(`${srcDir}/strategy.js`);
 
-let { setViewDrag } = require(SRC_DIR + "/tools.js");
+const { setViewDrag } = require(`${srcDir}/tools.js`);
 
 // 是否开启了无障碍
 auto();

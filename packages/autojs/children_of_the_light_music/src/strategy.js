@@ -1,9 +1,8 @@
-let SRC_DIR = "/sdcard/children_of_the_light_music/src";
+let SRC_DIR = "/storage/emulated/0/children_of_the_light_music/src";
 
-let ASSET_DIR = "/sdcard/children_of_the_light_music/asset";
+let ASSET_DIR = "/storage/emulated/0/children_of_the_light_music/asset";
 
-let { MUSIC_KEY_PREFIX, CLICK_SCREEN_TIMES } = require(SRC_DIR +
-  "/constant.js");
+let { musicKeyPrefix, clickScreenCount } = require(SRC_DIR + "/constant.js");
 
 let {
   isFloatyWindowVisible,
@@ -34,7 +33,7 @@ isFloatyWindowVisible(canvasView, false);
 isFloatyWindowVisible(coordinateModifyTextView, false);
 
 // 使用 canvas 获取坐标
-// 存储用户按15个键的位置 => { key: MUSIC_KEY_PREFIX + 1~15, value: '100,100' }
+// 存储用户按15个键的位置 => { key: musicKeyPrefix + 1~15, value: '100,100' }
 function getCoordinateWithCanvas() {
   if (!canvasView || !canvasView.canvasId) {
     toast("请检查 canvasView 是否存在！");
@@ -64,8 +63,8 @@ function getCoordinateWithCanvas() {
           );
           const x = parseInt(event.getX());
           const y = parseInt(event.getY());
-          storage.put(MUSIC_KEY_PREFIX + clickNumber, x + "," + y);
-          if (clickNumber === CLICK_SCREEN_TIMES) {
+          storage.put(musicKeyPrefix + clickNumber, x + "," + y);
+          if (clickNumber === clickScreenCount) {
             // 不使用 canvasView.close()，因为导入 canvasView 其实就一个实例，关闭后，canvas 就没了，
             // 在重启脚本前就无法使用坐标修改了。
             isFloatyWindowVisible(canvasView, false);
@@ -119,7 +118,7 @@ const functionStrategy = {
   },
 
   坐标修改: () => {
-    confirm("请确认 " + CLICK_SCREEN_TIMES + " 个键坐标", "", (success) => {
+    confirm("请确认 " + clickScreenCount + " 个键坐标", "", (success) => {
       if (success) {
         toast("坐标指定中...");
         // canvas 的 touch 必须在起源线程中执行，所以这里不能使用 execScriptFile
