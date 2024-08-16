@@ -173,3 +173,43 @@ console.log(mergedData);
   - 根据时间戳对歌词和 MIDI 数据进行匹配。可以设置一个允许的时间差，例如 1 秒，以找到最接近的 MIDI 事件。
 
   - 为每个歌词条目附加对应的 MIDI 操作数据。
+
+```js
+const a = {
+  formatType: 1,
+  tracks: 2,
+  track: [
+    {
+      event: [
+        // deltaTime: 1025: 当前事件与上一个事件之间的时间间隔。
+        // => 这个事件相对于上一个事件延迟了 1025 个 ticks。
+        // => 由于timeDivision是 480，这相当于约2.14个四分音符。
+        // => 1025/480 = 2.14
+        // 如果每个节拍是 500ms, 则这里延时 2.14 * 500 = 1070ms
+
+        // type: 9: 事件类型9代表“Note On”事件，即按下一个音符。
+
+        // channel: 0: 事件发生在MIDI通道0。
+
+        // data: [74, 0]:
+        // => 74: 这是音符编号，代表某个具体的音符（例如在钢琴上的某个键）。
+        // => 0: 力度值为0，表示这个音符被释放，即 “Note Off”。
+        { deltaTime: 1025, type: 9, channel: 0, data: [74, 0] },
+        { deltaTime: 55, type: 9, channel: 0, data: [67, 80] },
+        { deltaTime: 2735, type: 9, channel: 0, data: [67, 0] },
+      ],
+    },
+    {
+      event: [
+        { deltaTime: 227, type: 9, channel: 1, data: [55, 0] },
+        { deltaTime: 13, type: 9, channel: 1, data: [58, 80] },
+      ],
+    },
+  ],
+
+  // 表示时间分辨率，也称为节拍分辨率。这里的值是 480，
+  // 意味着每个四分音符（即一个节拍）被分为 480 个ticks。
+  // deltaTime 字段的值将以此为基础来表示事件之间的时间间隔。
+  timeDivision: 480,
+};
+```
