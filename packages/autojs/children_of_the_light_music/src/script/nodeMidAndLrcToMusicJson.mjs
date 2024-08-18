@@ -5,12 +5,21 @@
  * - 若有 lrc, 则将 mid 与 lrc 合并, 将携带歌词数据
  */
 
-const { useShareData } = engines.myEngine().execArgv;
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
 
-let { srcDir, packagesDir, rootDir, assetDir } = useShareData();
+import { parseLrc, polyfillForIn } from "../tools.js";
+import MidiParser from "midi-parser-js";
 
-let { parseLrc, polyfillForIn } = require(srcDir + "/tools.js");
-const MidiParser = require(`${packagesDir}/midi-parset-js/midi-parset-js.js`);
+const __filename = fileURLToPath(import.meta.url);
+// D:*/children_of_the_light_music
+const rootDir = path.dirname(path.join(__filename, "../../"));
+
+const srcDir = path.resolve(rootDir, "src");
+const packagesDir = path.resolve(rootDir, "packages");
+const distDir = path.resolve(rootDir, "dist");
+const assetDir = path.resolve(rootDir, "asset");
 
 /** 将 lrc 转换为具有 words 和 time 的数据
  * @param {string} lrcContent
@@ -88,10 +97,9 @@ function getMidiToKeyData(midiSourceBytes, config) {
   });
 
   // 解析 midi 文件, 如何解析的规范参见: https://github.com/colxi/midi-parser-js/wiki/MIDI-File-Format-Specifications
-  const Base64 = android.util.Base64;
   let base64String = "";
   try {
-    base64String = Base64.encodeToString(midiSourceBytes, Base64.DEFAULT);
+    base64String = midiSourceBytes;
   } catch (error) {
     console.log("传入的 midi 数据有误或当前环境不支持 Android 语法");
   }
@@ -111,15 +119,15 @@ function getMidiToKeyData(midiSourceBytes, config) {
    * }
    */
   const midiData = MidiParser.parse(base64String);
+  fs.writeFileSync(`${assetDir}/midiData.json`, JSON.stringify(midiData));
 
-  /** 根据音轨数据决定使用哪个音轨, 以及能对应游戏键的音符数据
+  /** 只保留第一个音轨, 以及能对应游戏键的音符数据
    * @returns {
    *   {
    *     "deltaTime": numberTicks, "type": 9, "channel": 0, "data": [69, 0]
    *   }[]
    * }
    */
-  // 音轨数据 >10, 采用音轨1 ,否则用音轨2
   const activeTrackEvent =
     midiData.track[0].event.length > 10 &&
     !!midiData.track[0].event.find((event) => event.type === 9)
@@ -128,7 +136,6 @@ function getMidiToKeyData(midiSourceBytes, config) {
   const filterMidiData = activeTrackEvent.filter((item) => {
     // 得到每个拍子的时间
     // metaType === 81: 节拍事件
-    // 为什么以下这么做, 因为可能音轨1有元数据, 而音轨2没有元数据, 只有音符数据
     const metaType81Item =
       item.metaType === 81
         ? item
@@ -211,7 +218,7 @@ function mergeMidiKeyDataAndMusicData(lyricData, midiToKeyData) {
   return result;
 }
 
-const assetFileList = files.listDir(assetDir);
+const assetFileList = fs.readdirSync(assetDir);
 
 // 歌词是可选的, 没有歌词也能有按键数据
 const assetLrcList = assetFileList.filter((fileName) =>
@@ -231,21 +238,28 @@ assetMidList.forEach((midFileName) => {
   const isHaveLrc = assetLrcList.includes(`${name}.lrc`);
 
   if (isHaveLrc) {
-    const lyricData = getLrcToLyricData(files.read(`${assetDir}/${name}.lrc`));
+    const lyricData = getLrcToLyricData(
+      fs.readFileSync(`${assetDir}/${name}.lrc`)
+    );
     const midiToKeyData = getMidiToKeyData(
-      files.readBytes(`${assetDir}/${name}.mid`),
-      JSON.parse(files.read(`${rootDir}/config.json`))
+      fs.readFileSync(`${assetDir}/${name}.mid`, "base64"),
+      JSON.parse(fs.readFileSync(`${rootDir}/config.json`))
     );
     const mergeData = mergeMidiKeyDataAndMusicData(lyricData, midiToKeyData);
-    files.write(`${assetDir}/${name}.json`, JSON.stringify(mergeData));
+    fs.writeFileSync(`${assetDir}/${name}.json`, JSON.stringify(mergeData));
 
     return;
   }
 
   // 没有歌词数据, 则只有按键数据
   const midiToKeyDataForNotHaveLrc = getMidiToKeyData(
-    files.readBytes(`${assetDir}/${name}.mid`),
-    JSON.parse(files.read(`${rootDir}/config.json`))
+    fs.readFileSync(`${assetDir}/${name}.mid`, "base64"),
+    JSON.parse(fs.readFileSync(`${rootDir}/config.json`))
+  );
+
+  fs.writeFileSync(
+    `${assetDir}/midiToKeyDataForNotHaveLrc.json`,
+    JSON.stringify(midiToKeyDataForNotHaveLrc)
   );
 
   let accDelayMS = 0;
@@ -264,5 +278,8 @@ assetMidList.forEach((midFileName) => {
     };
   });
 
-  files.write(`${assetDir}/${name}.json`, JSON.stringify(notHaveLrcMusicData));
+  fs.writeFileSync(
+    `${assetDir}/${name}.json`,
+    JSON.stringify(notHaveLrcMusicData)
+  );
 });
