@@ -1,9 +1,12 @@
 {
   "name": "autojs",
   "version": "1.0.0",
-  "description": "",
-  "scripts": {},
+  "description": "hamibot 基于 Auto.js 实现, 在 [hamibot Github](https://github.com/hamibot/hamibot) 可以看到 autojs 目录.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "keywords": [],
-  "author": "yomua",
+  "author": "",
   "license": "ISC"
 }
