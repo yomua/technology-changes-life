@@ -1,74 +1,63 @@
-let SRC_DIR = "/storage/emulated/0/children_of_the_light_music/src";
-
-let ASSET_DIR = "/storage/emulated/0/children_of_the_light_music/asset";
-
-let { musicKeyPrefix, clickScreenCount } = require(SRC_DIR + "/constant.js");
+let { srcDir, assetDir, musicKeyPrefix, maxClickScreenCount } = useShareData();
 
 let {
   isFloatyWindowVisible,
   runScriptWithVariable,
   emitSpecifiedScriptEvent,
-} = require(SRC_DIR + "/tools.js");
+} = require(`${srcDir}/tools.js`);
 
 let storage = storages.create("children_of_the_light_music");
 
-// 用于坐标修改
 // 显示当前是第几个键
-const coordinateModifyTextView = floaty.rawWindow(
+const coordinateText = floaty.rawWindow(
   <frame gravity="center">
     <text textSize="22sp" textColor="#dd7694" id="coordinateModifyTextId" />
   </frame>
 );
 
 // 用于坐标修改
-// 创建一个 canvas, 然后监听 canvas 上的按压事件
-const canvasView = floaty.rawWindow(
+const coordinateCanvas = floaty.rawWindow(
   <vertical>
     <canvas id="canvasId" layout_weight="1" />
   </vertical>
 );
 
-isFloatyWindowVisible(canvasView, false);
+// 首先隐藏
+isFloatyWindowVisible(coordinateCanvas, false);
+isFloatyWindowVisible(coordinateText, false);
 
-isFloatyWindowVisible(coordinateModifyTextView, false);
-
-// 使用 canvas 获取坐标
+// 设置坐标
 // 存储用户按15个键的位置 => { key: musicKeyPrefix + 1~15, value: '100,100' }
-function getCoordinateWithCanvas() {
-  if (!canvasView || !canvasView.canvasId) {
-    toast("请检查 canvasView 是否存在！");
+function setCoordinate() {
+  if (!coordinateCanvas || !coordinateCanvas.canvasId) {
+    toast("请检查 coordinateCanvas 是否存在！");
     return;
   }
-  isFloatyWindowVisible(canvasView, true);
-  isFloatyWindowVisible(coordinateModifyTextView, true);
-  coordinateModifyTextView.coordinateModifyTextId.setText("请确认坐标");
+  isFloatyWindowVisible(coordinateCanvas, true);
+  isFloatyWindowVisible(coordinateText, true);
+  coordinateText.coordinateModifyTextId.setText("请确认坐标");
 
-  let clickNumber = 0;
+  // 初始时, 按键数量为 0
+  let clickCount = 0;
 
-  const paint = new Paint();
-  paint.setStrokeWidth(10);
-  paint.setStyle(Paint.Style.FILL);
-  paint.setStrokeCap(Paint.Cap.SQUARE);
-  paint.setARGB(50, 100, 120, 160);
-
-  handleCanvasDraw = () => {
-    canvasView.canvasId.setOnTouchListener(function (view, event) {
+  coordinateCanvas.canvasId.on("draw", () => {
+    coordinateCanvas.canvasId.setOnTouchListener(function (view, event) {
       switch (event.getAction()) {
         case event.ACTION_DOWN:
-          clickNumber += 1;
-          let nextKey = clickNumber + 1;
-          coordinateModifyTextView.setSize(-1, -1);
-          coordinateModifyTextView.coordinateModifyTextId.setText(
-            "当前点击的键为: " + clickNumber + ", " + "下一个键为: " + nextKey
+          clickCount += 1; // 点击一次, 则当前按键 + 1
+          let nextKey = clickCount + 1; // 下一个按键是几
+          coordinateText.setSize(-1, -1); // 全屏
+          coordinateText.coordinateModifyTextId.setText(
+            "当前点击的键为: " + clickCount + ", " + "下一个键为: " + nextKey
           );
           const x = parseInt(event.getX());
           const y = parseInt(event.getY());
-          storage.put(musicKeyPrefix + clickNumber, x + "," + y);
-          if (clickNumber === clickScreenCount) {
-            // 不使用 canvasView.close()，因为导入 canvasView 其实就一个实例，关闭后，canvas 就没了，
+          storage.put(musicKeyPrefix + clickCount, x + "," + y);
+          if (clickCount === maxClickScreenCount) {
+            // 不使用 coordinateCanvas.close()，因为导入 coordinateCanvas 其实就一个实例，关闭后，canvas 就没了，
             // 在重启脚本前就无法使用坐标修改了。
-            isFloatyWindowVisible(canvasView, false);
-            isFloatyWindowVisible(coordinateModifyTextView, false);
+            isFloatyWindowVisible(coordinateCanvas, false);
+            isFloatyWindowVisible(coordinateText, false);
           }
 
           return true;
@@ -80,59 +69,62 @@ function getCoordinateWithCanvas() {
 
       return true;
     });
-  };
-
-  canvasView.canvasId.on("draw", handleCanvasDraw);
+  });
 }
 
 const functionStrategy = {
   开始弹奏: () => {
     // 读取 asset/ *.json 文件
-    const musicList = files.listDir(ASSET_DIR, function (name) {
-      return name.endsWith(".json") && files.isFile(ASSET_DIR + "/" + name);
+    const musicList = files.listDir(assetDir, function (name) {
+      return name.endsWith(".json") && files.isFile(assetDir + "/" + name);
     });
 
-    // musicOptions: [ 1: '错位时空', 2: '孤勇者', ...]
-    const musicOptions = musicList.map((item, i) => {
-      return i + 1 + ": " + item.split(".")[0];
+    //  [ 1: '错位时空', 2: '孤勇者', ...]
+    // 索引从 1 开始
+    const musicNameOptions = musicList.map((item, i) => {
+      return `${i + 1}: ${item.split(".")[0]}`;
     });
 
-    dialogs.select("请选择歌曲", musicOptions, function (selectedIndex) {
+    dialogs.select("请选择歌曲", musicNameOptions, function (selectedIndex) {
       if (selectedIndex === -1) {
         return;
       }
 
-      const musicName = musicOptions[selectedIndex].split(": ")[1];
+      const musicName = musicNameOptions[selectedIndex].split(": ")[1];
 
-      const startPlayer = SRC_DIR + "/script/startPlayer.js";
+      const startPlayer = `${srcDir}/script/startPlayer.js`;
 
       // 先结束上一个 startPlayer.js 的执行
       emitSpecifiedScriptEvent(startPlayer, "closePlayMusic");
 
       // 再执行本次的 startPlayer.js
       runScriptWithVariable(startPlayer, {
-        keyData: files.read(ASSET_DIR + "/" + musicName + ".json"),
-        lrcData: files.read(ASSET_DIR + "/" + musicName + ".lrc"),
+        musicData: files.read(`${assetDir}/${musicName}.json`),
+        useShareData, // 使用此方法, 会创建全新脚本环境, 不会共享 hamibot.jss 中的变量
       });
     });
   },
 
   坐标修改: () => {
-    confirm("请确认 " + clickScreenCount + " 个键坐标", "", (success) => {
-      if (success) {
-        toast("坐标指定中...");
-        // canvas 的 touch 必须在起源线程中执行，所以这里不能使用 execScriptFile
-        getCoordinateWithCanvas();
+    confirm(`请确认 ${maxClickScreenCount} 个键坐标`, "", (success) => {
+      if (!success) {
+        return;
       }
+
+      toast("坐标指定中...");
+      // canvas 的 touch 必须在起源线程中执行，所以这里不能使用 execScriptFile
+      setCoordinate();
     });
   },
 
   退出脚本: () => {
     confirm("确认是否退出脚本？", "", (success) => {
-      if (success) {
-        toast("退出成功");
-        engines.stopAll();
+      if (!success) {
+        return;
       }
+
+      toast("退出成功");
+      engines.stopAll();
     });
   },
 };
@@ -141,8 +133,10 @@ module.exports = {
   useFunctionStrategy: (action) => {
     if (action === null || action === undefined) {
       toast("不存在功能：" + action);
+
       return () => {}; // 错误处理
     }
+
     return functionStrategy[action];
   },
 };

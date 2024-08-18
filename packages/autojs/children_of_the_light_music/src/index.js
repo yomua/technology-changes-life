@@ -2,20 +2,23 @@
  *   Copyright (c) 2022 yomua. All rights reserved.
  */
 
-const {
-  srcDir,
-} = require("/storage/emulated/0/children_of_the_light_music/src/constant.js");
-
-const INDEX_ROOT_OPTIONS = ["1.开始弹奏", "2.坐标修改", "3.退出脚本"];
-
-const { useFunctionStrategy } = require(`${srcDir}/strategy.js`);
-
-const { setViewDrag } = require(`${srcDir}/tools.js`);
-
 // 是否开启了无障碍
 auto();
 
-// 创建 UI
+let { srcDir } = useShareData();
+
+let { useFunctionStrategy } = require(`${srcDir}/strategy.js`);
+
+let { setViewDrag, runScriptWithVariable } = require(`${srcDir}/tools.js`);
+
+runScriptWithVariable(`${srcDir}/script/midAndLrcToMusicJson.js`, {
+  useShareData,
+});
+
+// 拥有的功能
+const functionOptions = ["1.开始弹奏", "2.坐标修改", "3.退出脚本"];
+
+// 创建 logo
 const scriptIconView = floaty.rawWindow(
   <img
     id="scriptIconId"
@@ -28,15 +31,16 @@ const scriptIconView = floaty.rawWindow(
 
 scriptIconView.setPosition(0, device.width ? device.width / 2 : 500);
 
+// 设置一个空的定时来保持线程的运行状态
 setInterval(() => {}, 1000);
 
 setViewDrag(scriptIconView, scriptIconView.scriptIconId, function () {
-  dialogs.select("请选择功能", INDEX_ROOT_OPTIONS, (selectedIndex) => {
+  dialogs.select("请选择功能", functionOptions, (selectedIndex) => {
     if (selectedIndex === -1) {
       return;
     }
 
-    switch (INDEX_ROOT_OPTIONS[selectedIndex].split(".")[1]) {
+    switch (functionOptions[selectedIndex].split(".")[1]) {
       case "开始弹奏":
         useFunctionStrategy("开始弹奏")();
         break;

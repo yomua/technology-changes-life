@@ -1,19 +1,17 @@
-// 按下指定的键
+/** 此文件用来: 按下指定的键 */
 
-const { keyData: musicData } = engines.myEngine().execArgv;
+let { keyData: musicData, useShareData } = engines.myEngine().execArgv;
 
 if (!musicData) {
-  toast("不存在按键数据");
+  toast("不存在对应的数据");
   exit();
 }
 
+let { srcDir, musicKeyPrefix } = useShareData();
+
 let storage = storages.create("children_of_the_light_music");
 
-let SRC_DIR = "/storage/emulated/0/children_of_the_light_music/src";
-
-let { musicKeyPrefix } = require(SRC_DIR + "/constant.js");
-
-let { getXYForStorage } = require(SRC_DIR + "/tools.js");
+let { getXYForStorage } = require(srcDir + "/tools.js");
 
 function handleExit() {
   threads.shutDownAll();
@@ -36,7 +34,7 @@ function runPress({ data }) {
   }
 
   if (!data || !data.length) {
-    toast("当前数据错误");
+    toast("没有可以按压的键");
     return;
   }
 
@@ -84,7 +82,7 @@ events.on("closePlay", handleExit);
 
 // 开子线程的目的：触发 closePlay 事件时，不必等待 musicData 执行完
 threads.start(function () {
-  musicData.forEach((words) => {
-    runPress(words);
+  musicData.forEach((musicInfo) => {
+    runPress(musicInfo);
   });
 });

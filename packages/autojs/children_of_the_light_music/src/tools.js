@@ -1,4 +1,4 @@
-/**
+/** 得到设置的 x,y 坐标
  * @param {string} value : e.g. '500,500'
  * @returns {{x:string, y:string}}
  */
@@ -22,7 +22,6 @@ function getXYForStorage(value) {
 }
 
 /** 控制指定的 view 是否可见
- *
  * @param { floatyWindow } view
  * @param { boolean } visible
  */
@@ -33,15 +32,14 @@ function isFloatyWindowVisible(view, visible) {
   }
   if (!visible) {
     view.setTouchable(false);
-    view.setSize(0, 0);
+    view.setSize(1, 1); // 不能是 0,0 这不生效, 设置为 1,1 即可
     return;
   }
   view.setTouchable(true);
   view.setSize(-1, -1);
 }
 
-/**
- * config.keyData 中的类型 number 指：延迟 n 秒才执行本轮操作；delay 指：本轮中的此按键延迟多久按。
+/** 执行指定脚本文件, 并携带参数
  * @param {string} dir
  * @param {{[key: string]: any}} config
  * @returns { ScriptEngine }
@@ -65,8 +63,7 @@ function runScriptWithVariable(dir, config) {
   });
 }
 
-/**
- *
+/** 设置 view 的拖拽
  * @param { FloatyRawWindow | FloatyWindow } view 外层视图
  * @param { Widget } controlComponent view 里面的某个控件
  * @param { () => void? } onClick
@@ -130,8 +127,7 @@ function setViewDrag(view, controlComponent, onClick) {
   });
 }
 
-/**
- *
+/** 触发指定脚本文件的事件, 并携带参数
  * @param { string } dir
  * @param { string } eventName
  * @param { { [key:string]: any } } config
@@ -165,6 +161,7 @@ function emitSpecifiedScriptEvent(dir, eventName, config) {
   });
 }
 
+// 解析 lrc 歌词数据
 function parseLrc(lrc) {
   // 会返回的数据结构
   const oLRC = {
@@ -208,7 +205,7 @@ function parseLrc(lrc) {
         let s = t.split(":"); //分离:前后文字
         oLRC.ms.push({
           //对象 {time:时间, lyric:歌词} push 进 ms 数组
-          time: (parseFloat(s[0]) * 60 + parseFloat(s[1])).toFixed(3),
+          time: +(parseFloat(s[0]) * 60 + parseFloat(s[1])).toFixed(3),
           lyric: content,
         });
       }
@@ -225,9 +222,16 @@ function parseLrc(lrc) {
   return oLRC;
 }
 
+function polyfillForIn(obj, callback) {
+  Object.keys(obj).forEach(function (key) {
+    callback(key, obj[key]);
+  });
+}
+
 module.exports = {
   parseLrc: parseLrc,
   setViewDrag: setViewDrag,
+  polyfillForIn: polyfillForIn,
   getXYForStorage: getXYForStorage,
   runScriptWithVariable: runScriptWithVariable,
   isFloatyWindowVisible: isFloatyWindowVisible,
