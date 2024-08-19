@@ -1,4 +1,4 @@
-/**
+/** 这是使用 node 环境的, 版本需要在 16.15.0 及以上
  * 读取 asset/ 下的 lrc 和 mid 文件, 并将之解析为 .json 格式, 以对应游戏按键
  * - mid 是必须的, lrc 是可选的
  * - 若没有 lrc, 则只解析 mid
@@ -26,6 +26,7 @@ const assetDir = path.resolve(rootDir, "asset");
  * @returns { {words: string, time: numberS, data[]}[] }
  */
 function getLrcToLyricData(lrcContent) {
+  console.log("__  getLrcToLyricData  lrcContent__", lrcContent);
   if (!lrcContent) {
     console.log("lrc 数据不存在");
     return;
@@ -119,7 +120,7 @@ function getMidiToKeyData(midiSourceBytes, config) {
    * }
    */
   const midiData = MidiParser.parse(base64String);
-  fs.writeFileSync(`${assetDir}/midiData.json`, JSON.stringify(midiData));
+  // fs.writeFileSync(`${assetDir}/midiData.json`, JSON.stringify(midiData));
 
   /** 只保留第一个音轨, 以及能对应游戏键的音符数据
    * @returns {
@@ -239,11 +240,11 @@ assetMidList.forEach((midFileName) => {
 
   if (isHaveLrc) {
     const lyricData = getLrcToLyricData(
-      fs.readFileSync(`${assetDir}/${name}.lrc`)
+      fs.readFileSync(`${assetDir}/${name}.lrc`, "utf-8")
     );
     const midiToKeyData = getMidiToKeyData(
       fs.readFileSync(`${assetDir}/${name}.mid`, "base64"),
-      JSON.parse(fs.readFileSync(`${rootDir}/config.json`))
+      JSON.parse(fs.readFileSync(`${rootDir}/config.json`, "utf-8"))
     );
     const mergeData = mergeMidiKeyDataAndMusicData(lyricData, midiToKeyData);
     fs.writeFileSync(`${assetDir}/${name}.json`, JSON.stringify(mergeData));
@@ -254,13 +255,13 @@ assetMidList.forEach((midFileName) => {
   // 没有歌词数据, 则只有按键数据
   const midiToKeyDataForNotHaveLrc = getMidiToKeyData(
     fs.readFileSync(`${assetDir}/${name}.mid`, "base64"),
-    JSON.parse(fs.readFileSync(`${rootDir}/config.json`))
+    JSON.parse(fs.readFileSync(`${rootDir}/config.json`, "utf-8"))
   );
 
-  fs.writeFileSync(
-    `${assetDir}/midiToKeyDataForNotHaveLrc.json`,
-    JSON.stringify(midiToKeyDataForNotHaveLrc)
-  );
+  // fs.writeFileSync(
+  //   `${assetDir}/midiToKeyDataForNotHaveLrc.json`,
+  //   JSON.stringify(midiToKeyDataForNotHaveLrc)
+  // );
 
   let accDelayMS = 0;
 

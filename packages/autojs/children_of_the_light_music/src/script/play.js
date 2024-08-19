@@ -3,12 +3,18 @@
 let { keyData: musicData, useShareData } = engines.myEngine().execArgv;
 
 if (!musicData) {
-  toast("不存在对应的数据");
+  toast("不存在按键数据");
+  exit();
+}
+
+if (!useShareData) {
+  toast("不存在共享数据");
   exit();
 }
 
 let { srcDir, musicKeyPrefix } = useShareData();
 
+// 目的: 读取按键的坐标
 let storage = storages.create("children_of_the_light_music");
 
 let { getXYForStorage } = require(srcDir + "/tools.js");
@@ -65,6 +71,7 @@ function runPress({ data }) {
         delay = 0;
       }
 
+      // 按压时间至少持续 1s
       if (!pressDuration) {
         pressDuration = 1;
       }

@@ -1,6 +1,6 @@
-const a = {
+const midiJSONFormat = {
   //0: 1个轨道 2:有多个轨道 3: 0 和 1合并
-  formatType: 1,
+  formatType: 1, // 0 | 1 | 2
 
   // 2 个轨道
   tracks: 2,
@@ -15,7 +15,7 @@ const a = {
       event: [
         /**
          * type: 8 - Note Off: 用于停止播放指定的音符。
-         * -> type:9 data[1]（音符力度）为 0: 也表示停止播放音符
+         * => type:9 data[1]（音符力度）为 0: 也表示停止播放音符
          * type: 9 - Note On: 播放指定音符
          * type: 10 - Polyphonic Key Pressure (Aftertouch): 用于传输每个按键的压力或触摸感应。
          * type: 11 表示控制器变化事件，用于实时控制不同的参数。
@@ -30,9 +30,10 @@ const a = {
          * metaType 89 表示时间签名事件，具体拍号信息。
          *
          * deltaTime: 表示此事件与前一个事件之间的时间延迟几个 tick
-         * => 转成ms: (metaType===81.data / 1000) / timeDivision * deltaTime
+         * => 转成ms: (metaType===81的 data / 1000) / timeDivision * deltaTime
          * => metaType===81.data / 1000: 每个节拍的时间, 单位 ms
-         * => 每个节拍的时间 / timeDivision = 每隔 tick 的时间(ms)
+         * => 每个节拍的时间 / timeDivision = 每个 tick 的时间(ms)
+         * => 每个 tick 的时间(ms) * deltaTime = deltaTime 个 ticks 需要多少毫秒
          *
          * data[0]: 指定的音符
          * data[1]: 按下音符的用力程度
@@ -45,7 +46,8 @@ const a = {
         { deltaTime: 0, type: 11, channel: 0, data: [121, 0] },
         { deltaTime: 0, type: 12, channel: 0, data: 0 },
         { deltaTime: 0, type: 255, metaType: 33, data: 0 },
-        { deltaTime: 0, type: 9, channel: 0, data: [72, 80] },
+        // 延迟 222 个ticks, 按下音符 72, 音符力度 80
+        { deltaTime: 222, type: 9, channel: 0, data: [72, 80] },
         { deltaTime: 1, type: 255, metaType: 47 },
       ],
     },

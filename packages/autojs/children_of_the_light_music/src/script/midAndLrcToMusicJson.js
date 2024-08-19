@@ -1,8 +1,8 @@
 /**
- * 读取 asset/ 下的 lrc 和 mid 文件, 并将之解析为 .json 格式, 以对应游戏按键
+ * 读取 asset/ 下的 lrc 和 mid 文件, 并将之解析为自定义的 .json 数据格式, 参见: asset/json数据格式说明.js
  * - mid 是必须的, lrc 是可选的
  * - 若没有 lrc, 则只解析 mid
- * - 若有 lrc, 则将 mid 与 lrc 合并, 将携带歌词数据
+ * - 若有 lrc, 则把 mid 与 lrc 合并, 将携带歌词数据
  */
 
 const { useShareData } = engines.myEngine().execArgv;
@@ -13,8 +13,8 @@ let { parseLrc, polyfillForIn } = require(srcDir + "/tools.js");
 const MidiParser = require(`${packagesDir}/midi-parset-js/midi-parset-js.js`);
 
 /** 将 lrc 转换为具有 words 和 time 的数据
- * @param {string} lrcContent
- * @returns { {words: string, time: numberS, data[]}[] }
+ * @param {string} lrcContent lrc 文件内容
+ * @returns { {words: string, time: numberS, data: []}[] }
  */
 function getLrcToLyricData(lrcContent) {
   if (!lrcContent) {

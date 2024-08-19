@@ -1,25 +1,27 @@
 /** 此文件: 处理歌词显示, 进度条显示, 播放歌曲, 停止播放 */
 
 /**
- *  keyData: {
+ *  musicData: {
  *    words: string,
  *    time: string,
  *    data: Array< number | {key: number, delay: number, pressDuration: number} [] >
  *  }[]
- *
- *  lrcData: .lrc 文件的内容
  */
 const { musicData, useShareData } = engines.myEngine().execArgv;
 
 if (!musicData) {
-  toast("不存在按键数据");
+  toast("不存在音乐数据");
+  exit();
+}
+
+if (!useShareData) {
+  toast("不存在共享数据");
   exit();
 }
 
 let { srcDir } = useShareData();
 
 let {
-  parseLrc,
   setViewDrag,
   runScriptWithVariable,
   emitSpecifiedScriptEvent,
@@ -29,10 +31,12 @@ const musicDataObj = JSON.parse(musicData);
 
 const total = +musicDataObj[musicDataObj.length - 1].time;
 
+// 歌词总时间
 const lrcTotalTime = Math.ceil(total);
 
 let timerId = null,
-  currentLyricTime = 0, // 设置进度条位置, 以及显示进度;  当前播放时间, 即: 当前播放到第几秒 (s 单位)
+  // 进度条位置, 即: 表示当前播放时间, 即: 当前播放到第几秒 (s 单位)
+  currentLyricTime = 0,
   currentUiTimerId = null,
   seekBarWidth = device.width ? device.width * 0.3 : 500;
 
@@ -71,10 +75,10 @@ const seekBarView = floaty.rawWindow(
   </frame>
 );
 
-// 每秒刷新一次 UI, 让 UI 更新.
+// 保证此线程存活, 类似心跳检测.
 currentUiTimerId = setInterval(() => {}, 1000);
 
-// 对于横屏游戏：高 == x，宽 == y
+// 对于横屏游戏：高 = x，宽 = y
 seekBarView.setPosition(device.height / 2 - seekBarWidth, device.width / 2);
 
 seekBarView.frame.getBackground().setAlpha(100);

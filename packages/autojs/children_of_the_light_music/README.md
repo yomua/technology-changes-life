@@ -29,15 +29,15 @@
 
     如果打不开网址, 则参见 [指南](https://docs.hamibot.com/guide/install-hamibot) - 创建脚本
 
-5.  将 children_of_the_light_music/hamibot.js 复制到创建的脚本，点击运行
+5.  将 `children_of_the_light_music/hamibot.js` 复制到创建的脚本，点击运行
 
 ## 如何添加新的音乐
 
-- 在手机目录 children_of_the_light_music/asset 目录添加你下载 `.mid` 文件即可
+- 在手机目录 `children_of_the_light_music/asset` 目录添加你下载 `.mid` 文件即可
 
   `.mid` 文件是必需的, 你需要什么音乐, 则就必须要有此音乐的 `.mid` 文件
 
-- 如果需要显示歌词, 则在 children_of_the_light_music/asset 添加和 `.mid` 文件对应的 `.lrc` 文件
+- **如果**需要显示歌词, 则在 `children_of_the_light_music/asset` 添加和 `.mid` 文件对应的 `.lrc` 文件
 
   注意: `.lrc` 文件不是必须的, 只有你需要显示歌词时, 才需要有
 

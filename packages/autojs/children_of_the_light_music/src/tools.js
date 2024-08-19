@@ -23,7 +23,7 @@ function getXYForStorage(value) {
 
 /** 控制指定的 view 是否可见
  * @param { floatyWindow } view
- * @param { boolean } visible
+ * @param { boolean } visible 
  */
 function isFloatyWindowVisible(view, visible) {
   if (!view) {
@@ -40,8 +40,8 @@ function isFloatyWindowVisible(view, visible) {
 }
 
 /** 执行指定脚本文件, 并携带参数
- * @param {string} dir
- * @param {{[key: string]: any}} config
+ * @param {string} dir 文件的目录
+ * @param {{[key: string]: any}} config 携带的参数
  * @returns { ScriptEngine }
  */
 function runScriptWithVariable(dir, config) {
@@ -66,7 +66,7 @@ function runScriptWithVariable(dir, config) {
 /** 设置 view 的拖拽
  * @param { FloatyRawWindow | FloatyWindow } view 外层视图
  * @param { Widget } controlComponent view 里面的某个控件
- * @param { () => void? } onClick
+ * @param { () => void? } onClick 拖拽结束, 抬起手指后的回调
  */
 function setViewDrag(view, controlComponent, onClick) {
   if (!view || !controlComponent) {
@@ -128,9 +128,9 @@ function setViewDrag(view, controlComponent, onClick) {
 }
 
 /** 触发指定脚本文件的事件, 并携带参数
- * @param { string } dir
- * @param { string } eventName
- * @param { { [key:string]: any } } config
+ * @param { string } dir 文件的目录
+ * @param { string } eventName 时间名
+ * @param { { [key:string]: any } } config 携带的参数
  */
 function emitSpecifiedScriptEvent(dir, eventName, config) {
   if (!files.isFile(dir)) {
@@ -161,7 +161,15 @@ function emitSpecifiedScriptEvent(dir, eventName, config) {
   });
 }
 
-// 解析 lrc 歌词数据
+/** 解析 lrc 歌词数据
+ *
+ * @param {string} lrc 歌词文件内容
+ * @returns { {
+ *  ti: string, ar: string, al: string, by: string, offset: number,
+ *  total: numberS,
+ *  ms: Array<{time: numberS, lyric: string}>
+ * } }
+ */
 function parseLrc(lrc) {
   // 会返回的数据结构
   const oLRC = {
@@ -171,7 +179,6 @@ function parseLrc(lrc) {
     by: "", // 歌词制作人
     offset: 0, // 时间补偿值，单位毫秒，用于调整歌词整体位置
     total: 0, // 总时间, 单位 s
-    //  [{ time: '2.230', lyric: '词：周仁' }, { time: '15.500', lyric: '填不满半排观众的电影' }]
     ms: [], // 歌词数组 {time:时间 s, lyric:歌词}
   };
 
@@ -222,6 +229,11 @@ function parseLrc(lrc) {
   return oLRC;
 }
 
+/** 遍历对象
+ *
+ * @param {Object} obj
+ * @param {(key, value) => void} callback
+ */
 function polyfillForIn(obj, callback) {
   Object.keys(obj).forEach(function (key) {
     callback(key, obj[key]);

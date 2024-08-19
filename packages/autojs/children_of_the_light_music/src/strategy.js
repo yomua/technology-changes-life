@@ -6,6 +6,7 @@ let {
   emitSpecifiedScriptEvent,
 } = require(`${srcDir}/tools.js`);
 
+// 目前用来存储键的坐标
 let storage = storages.create("children_of_the_light_music");
 
 // 显示当前是第几个键
@@ -22,7 +23,7 @@ const coordinateCanvas = floaty.rawWindow(
   </vertical>
 );
 
-// 首先隐藏
+// 首先隐藏坐标画布
 isFloatyWindowVisible(coordinateCanvas, false);
 isFloatyWindowVisible(coordinateText, false);
 
