@@ -108,6 +108,7 @@ const functionStrategy = {
 
   坐标修改: () => {
     confirm(`请确认 ${maxClickScreenCount} 个键坐标`, "", (success) => {
+      storages.remove('children_of_the_light_music')
       if (!success) {
         return;
       }
