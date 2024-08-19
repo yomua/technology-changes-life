@@ -197,13 +197,13 @@ function mergeMidiKeyDataAndMusicData(lyricData, midiToKeyData) {
     // 直到多个项累计延迟时间 > 歌词时间, 就划分为一组
     // => 移动 currentIndex, 即: 移动到下一句歌词, 准备插入接下来的按键数据
     while (
-      currentIndex < result.length && // 不是最后的索引
+      currentIndex <= result.length - 1 && // 当索引 小于等于 最后一句歌词
       accumulatedDelay / 1000 > result[currentIndex].time // time 是秒单位, 所以 accumulatedDelay 需要除以 1000
     ) {
       currentIndex++;
     }
 
-    if (currentIndex < result.length) {
+    if (currentIndex <= result.length - 1) {
       result[currentIndex].data.push([0, keyInfo]);
     }
   });

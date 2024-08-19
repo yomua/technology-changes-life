@@ -1,0 +1,6282 @@
+[
+  {
+    "deltaTime": 0,
+    "type": 255,
+    "data": "\u0000",
+    "delay": 0,
+    "duration": 0
+  },
+  {
+    "deltaTime": 0,
+    "type": 255,
+    "data": [
+      4,
+      2,
+      24,
+      8
+    ],
+    "delay": 0,
+    "duration": 0
+  },
+  {
+    "deltaTime": 0,
+    "type": 255,
+    "data": 64768,
+    "delay": 0,
+    "duration": 0
+  },
+  {
+    "deltaTime": 0,
+    "type": 255,
+    "data": 909091,
+    "delay": 0,
+    "duration": 0
+  },
+  {
+    "deltaTime": 0,
+    "type": 11,
+    "channel": 0,
+    "data": [
+      121,
+      0
+    ],
+    "delay": 0,
+    "duration": 0
+  },
+  {
+    "deltaTime": 0,
+    "type": 12,
+    "channel": 0,
+    "data": 0,
+    "delay": 0,
+    "duration": 0
+  },
+  {
+    "deltaTime": 0,
+    "type": 11,
+    "channel": 0,
+    "data": [
+      7,
+      100
+    ],
+    "delay": 0,
+    "duration": 0
+  },
+  {
+    "deltaTime": 0,
+    "type": 11,
+    "channel": 0,
+    "data": [
+      10,
+      63
+    ],
+    "delay": 0,
+    "duration": 0
+  },
+  {
+    "deltaTime": 0,
+    "type": 11,
+    "channel": 0,
+    "data": [
+      91,
+      0
+    ],
+    "delay": 0,
+    "duration": 0
+  },
+  {
+    "deltaTime": 0,
+    "type": 11,
+    "channel": 0,
+    "data": [
+      93,
+      0
+    ],
+    "delay": 0,
+    "duration": 0
+  },
+  {
+    "deltaTime": 0,
+    "type": 255,
+    "data": 0,
+    "delay": 0,
+    "duration": 0
+  },
+  {
+    "deltaTime": 0,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 0,
+    "duration": 429.9242854166667
+  },
+  {
+    "deltaTime": 103,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 195.07577708333335,
+    "duration": 657.1970354166667
+  },
+  {
+    "deltaTime": 120,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 227.27275,
+    "duration": 429.92428541666675
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666664
+  },
+  {
+    "deltaTime": 0,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 0,
+    "duration": 214.01517291666664
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666664
+  },
+  {
+    "deltaTime": 0,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      77,
+      80
+    ],
+    "delay": 0,
+    "duration": 214.01517291666664
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666664
+  },
+  {
+    "deltaTime": 0,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 0,
+    "duration": 214.01517291666664
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      77,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666687
+  },
+  {
+    "deltaTime": 0,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      84,
+      80
+    ],
+    "delay": 0,
+    "duration": 214.01517291666687
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 429.92428541666686
+  },
+  {
+    "deltaTime": 0,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      82,
+      80
+    ],
+    "delay": 0,
+    "duration": 429.92428541666686
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666686
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      82,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 861.7425104166668
+  },
+  {
+    "deltaTime": 25,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      84,
+      80
+    ],
+    "delay": 47.34848958333334,
+    "duration": 429.9242854166664
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666686
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666686
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      77,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666686
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 861.7425104166668
+  },
+  {
+    "deltaTime": 25,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      77,
+      80
+    ],
+    "delay": 47.34848958333334,
+    "duration": 54.9242479166669
+  },
+  {
+    "deltaTime": 1,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 1.8939395833333335,
+    "duration": 54.9242479166669
+  },
+  {
+    "deltaTime": 1,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 1.8939395833333335,
+    "duration": 106.06061666666665
+  },
+  {
+    "deltaTime": 4,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      70,
+      80
+    ],
+    "delay": 7.575758333333334,
+    "duration": 214.01517291666642
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      65,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666642
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666642
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      60,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 429.92428541666686
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      63,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 0,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 0,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      63,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666642
+  },
+  {
+    "deltaTime": 0,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 0,
+    "duration": 214.01517291666642
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      62,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666642
+  },
+  {
+    "deltaTime": 0,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      65,
+      80
+    ],
+    "delay": 0,
+    "duration": 214.01517291666642
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      63,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666642
+  },
+  {
+    "deltaTime": 0,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 0,
+    "duration": 214.01517291666642
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      65,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666642
+  },
+  {
+    "deltaTime": 0,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 0,
+    "duration": 214.01517291666642
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      62,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 0,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      70,
+      80
+    ],
+    "delay": 0,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      70,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 645.8333979166673
+  },
+  {
+    "deltaTime": 19,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 35.98485208333334,
+    "duration": 70.07576458333278
+  },
+  {
+    "deltaTime": 3,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      70,
+      80
+    ],
+    "delay": 5.681818750000001,
+    "duration": 70.07576458333278
+  },
+  {
+    "deltaTime": 3,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      65,
+      80
+    ],
+    "delay": 5.681818750000001,
+    "duration": 70.07576458333278
+  },
+  {
+    "deltaTime": 3,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      60,
+      80
+    ],
+    "delay": 5.681818750000001,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      58,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666642
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      60,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666642
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      63,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666642
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      58,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666642
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      60,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666642
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      63,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666642
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      65,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 1293.5607354166677
+  },
+  {
+    "deltaTime": 0,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      70,
+      80
+    ],
+    "delay": 0,
+    "duration": 1293.5607354166677
+  },
+  {
+    "deltaTime": 37,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 70.07576458333334,
+    "duration": 214.01517291666642
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666642
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 861.7425104166668
+  },
+  {
+    "deltaTime": 25,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 47.34848958333334,
+    "duration": 214.01517291666642
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666642
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      70,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      70,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      70,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 645.8333979166673
+  },
+  {
+    "deltaTime": 19,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      70,
+      80
+    ],
+    "delay": 35.98485208333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      63,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 861.742510416665
+  },
+  {
+    "deltaTime": 25,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 47.34848958333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      70,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      68,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 861.742510416665
+  },
+  {
+    "deltaTime": 25,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 47.34848958333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      68,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      65,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      68,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      68,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      77,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 645.8333979166673
+  },
+  {
+    "deltaTime": 19,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 35.98485208333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 1293.5607354166677
+  },
+  {
+    "deltaTime": 37,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 70.07576458333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 861.742510416665
+  },
+  {
+    "deltaTime": 25,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 47.34848958333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      70,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      70,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      70,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 645.8333979166673
+  },
+  {
+    "deltaTime": 19,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      70,
+      80
+    ],
+    "delay": 35.98485208333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      63,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 861.7425104166687
+  },
+  {
+    "deltaTime": 25,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 47.34848958333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      70,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      68,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 861.7425104166687
+  },
+  {
+    "deltaTime": 25,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 47.34848958333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      68,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      65,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      68,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      68,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      77,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 1077.6516229166664
+  },
+  {
+    "deltaTime": 31,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 58.712127083333336,
+    "duration": 861.7425104166687
+  },
+  {
+    "deltaTime": 25,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      77,
+      80
+    ],
+    "delay": 47.34848958333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 1725.3789604166668
+  },
+  {
+    "deltaTime": 49,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 92.80303958333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      77,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      84,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      82,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      82,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 861.7425104166687
+  },
+  {
+    "deltaTime": 25,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      84,
+      80
+    ],
+    "delay": 47.34848958333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      80,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      77,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 861.7425104166687
+  },
+  {
+    "deltaTime": 25,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 47.34848958333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      80,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      77,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 861.7425104166687
+  },
+  {
+    "deltaTime": 25,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 47.34848958333334,
+    "duration": 861.7425104166687
+  },
+  {
+    "deltaTime": 25,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 47.34848958333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      59,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 0,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      65,
+      80
+    ],
+    "delay": 0,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      60,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 0,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 0,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      62,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 0,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      71,
+      80
+    ],
+    "delay": 0,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      65,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 0,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 0,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      77,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      84,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      82,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      82,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 861.7425104166687
+  },
+  {
+    "deltaTime": 25,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      84,
+      80
+    ],
+    "delay": 47.34848958333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      80,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      77,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 861.7425104166687
+  },
+  {
+    "deltaTime": 25,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 47.34848958333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      80,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      77,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 861.7425104166614
+  },
+  {
+    "deltaTime": 25,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 47.34848958333334,
+    "duration": 861.7425104166614
+  },
+  {
+    "deltaTime": 25,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 47.34848958333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 1293.5607354166714
+  },
+  {
+    "deltaTime": 37,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      71,
+      80
+    ],
+    "delay": 70.07576458333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      58,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 861.7425104166614
+  },
+  {
+    "deltaTime": 0,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      65,
+      80
+    ],
+    "delay": 0,
+    "duration": 861.7425104166614
+  },
+  {
+    "deltaTime": 25,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      65,
+      80
+    ],
+    "delay": 47.34848958333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      60,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 1725.3789604166668
+  },
+  {
+    "deltaTime": 0,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      64,
+      80
+    ],
+    "delay": 0,
+    "duration": 1725.3789604166668
+  },
+  {
+    "deltaTime": 49,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 92.80303958333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      80,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      68,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      77,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      65,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      70,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      65,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 861.7425104166614
+  },
+  {
+    "deltaTime": 25,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 47.34848958333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      77,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      70,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      77,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      70,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      77,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      68,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      77,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      77,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 142.04546875000233
+  },
+  {
+    "deltaTime": 5,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      77,
+      80
+    ],
+    "delay": 9.469697916666668,
+    "duration": 142.04546875000233
+  },
+  {
+    "deltaTime": 5,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 9.469697916666668,
+    "duration": 142.04546875000233
+  },
+  {
+    "deltaTime": 5,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 9.469697916666668,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      70,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      70,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      70,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      84,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      82,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 861.7425104166614
+  },
+  {
+    "deltaTime": 25,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      70,
+      80
+    ],
+    "delay": 47.34848958333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      82,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 861.7425104166614
+  },
+  {
+    "deltaTime": 25,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 47.34848958333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      70,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      70,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      70,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 645.8333979166637
+  },
+  {
+    "deltaTime": 19,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      70,
+      80
+    ],
+    "delay": 35.98485208333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      63,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 861.7425104166614
+  },
+  {
+    "deltaTime": 25,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 47.34848958333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      70,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      68,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      65,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 861.7425104166614
+  },
+  {
+    "deltaTime": 25,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 47.34848958333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      68,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      65,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      68,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      68,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      77,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 645.8333979166637
+  },
+  {
+    "deltaTime": 19,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 35.98485208333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 285.98487708333414
+  },
+  {
+    "deltaTime": 9,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 17.04545625,
+    "duration": 285.98487708333414
+  },
+  {
+    "deltaTime": 9,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 17.04545625,
+    "duration": 285.98487708333414
+  },
+  {
+    "deltaTime": 9,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 17.04545625,
+    "duration": 1293.5607354166714
+  },
+  {
+    "deltaTime": 37,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 70.07576458333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 861.7425104166614
+  },
+  {
+    "deltaTime": 25,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 47.34848958333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      70,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      70,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      70,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 645.8333979166637
+  },
+  {
+    "deltaTime": 19,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      70,
+      80
+    ],
+    "delay": 35.98485208333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      63,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 861.7425104166614
+  },
+  {
+    "deltaTime": 25,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 47.34848958333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      70,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      68,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      65,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 861.7425104166614
+  },
+  {
+    "deltaTime": 25,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 47.34848958333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      68,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      65,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      68,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      68,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      77,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 1077.6516229166737
+  },
+  {
+    "deltaTime": 31,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 58.712127083333336,
+    "duration": 861.7425104166614
+  },
+  {
+    "deltaTime": 25,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      77,
+      80
+    ],
+    "delay": 47.34848958333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 1725.3789604166668
+  },
+  {
+    "deltaTime": 49,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 92.80303958333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      77,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      84,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      82,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      82,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 861.7425104166614
+  },
+  {
+    "deltaTime": 25,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      84,
+      80
+    ],
+    "delay": 47.34848958333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      80,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      77,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 861.7425104166614
+  },
+  {
+    "deltaTime": 25,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 47.34848958333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      80,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      77,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 861.7425104166614
+  },
+  {
+    "deltaTime": 25,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 47.34848958333334,
+    "duration": 861.7425104166614
+  },
+  {
+    "deltaTime": 25,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 47.34848958333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      59,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 0,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      65,
+      80
+    ],
+    "delay": 0,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      60,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 0,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 0,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      62,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 0,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      71,
+      80
+    ],
+    "delay": 0,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      65,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 0,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 0,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      77,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      84,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      82,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      82,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 861.7425104166614
+  },
+  {
+    "deltaTime": 25,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      84,
+      80
+    ],
+    "delay": 47.34848958333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      80,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      77,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 861.7425104166614
+  },
+  {
+    "deltaTime": 25,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 47.34848958333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      80,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      77,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 861.7425104166614
+  },
+  {
+    "deltaTime": 25,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 47.34848958333334,
+    "duration": 861.7425104166614
+  },
+  {
+    "deltaTime": 25,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 47.34848958333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 1293.5607354166568
+  },
+  {
+    "deltaTime": 37,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      71,
+      80
+    ],
+    "delay": 70.07576458333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      58,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 861.7425104166614
+  },
+  {
+    "deltaTime": 0,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      65,
+      80
+    ],
+    "delay": 0,
+    "duration": 861.7425104166614
+  },
+  {
+    "deltaTime": 25,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      65,
+      80
+    ],
+    "delay": 47.34848958333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      60,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 1725.3789604166523
+  },
+  {
+    "deltaTime": 0,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      64,
+      80
+    ],
+    "delay": 0,
+    "duration": 1725.3789604166523
+  },
+  {
+    "deltaTime": 49,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 92.80303958333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      77,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      84,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      82,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      82,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 861.7425104166614
+  },
+  {
+    "deltaTime": 25,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      84,
+      80
+    ],
+    "delay": 47.34848958333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      80,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      77,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      80,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      77,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 861.7425104166614
+  },
+  {
+    "deltaTime": 25,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 47.34848958333334,
+    "duration": 861.7425104166614
+  },
+  {
+    "deltaTime": 25,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 47.34848958333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      59,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 0,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      65,
+      80
+    ],
+    "delay": 0,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      60,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 0,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 0,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      62,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 0,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      71,
+      80
+    ],
+    "delay": 0,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      65,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 0,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 0,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      77,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      84,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      82,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      82,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 861.7425104166614
+  },
+  {
+    "deltaTime": 25,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      84,
+      80
+    ],
+    "delay": 47.34848958333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      80,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      77,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 861.7425104166614
+  },
+  {
+    "deltaTime": 25,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 47.34848958333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      80,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      77,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 861.7425104166614
+  },
+  {
+    "deltaTime": 25,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 47.34848958333334,
+    "duration": 861.7425104166614
+  },
+  {
+    "deltaTime": 25,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 47.34848958333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 1293.5607354166568
+  },
+  {
+    "deltaTime": 37,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      71,
+      80
+    ],
+    "delay": 70.07576458333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 0,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 0,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 0,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 0,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 0,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      77,
+      80
+    ],
+    "delay": 0,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 0,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 0,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      77,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 0,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      84,
+      80
+    ],
+    "delay": 0,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 0,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      82,
+      80
+    ],
+    "delay": 0,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      82,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 861.7425104166614
+  },
+  {
+    "deltaTime": 25,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      84,
+      80
+    ],
+    "delay": 47.34848958333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      77,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      79,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 861.7425104166614
+  },
+  {
+    "deltaTime": 25,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      77,
+      80
+    ],
+    "delay": 47.34848958333334,
+    "duration": 54.92424791667145
+  },
+  {
+    "deltaTime": 1,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      75,
+      80
+    ],
+    "delay": 1.8939395833333335,
+    "duration": 54.92424791667145
+  },
+  {
+    "deltaTime": 1,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 1.8939395833333335,
+    "duration": 106.06061666665482
+  },
+  {
+    "deltaTime": 4,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      70,
+      80
+    ],
+    "delay": 7.575758333333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      65,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      60,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      63,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 0,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 0,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      63,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 0,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 0,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      62,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 0,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      65,
+      80
+    ],
+    "delay": 0,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      63,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 0,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 0,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      65,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 0,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 0,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      62,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 0,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      70,
+      80
+    ],
+    "delay": 0,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      70,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 861.7425104166614
+  },
+  {
+    "deltaTime": 25,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      72,
+      80
+    ],
+    "delay": 47.34848958333334,
+    "duration": 62.50000624998938
+  },
+  {
+    "deltaTime": 1,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      70,
+      80
+    ],
+    "delay": 1.8939395833333335,
+    "duration": 62.50000624998938
+  },
+  {
+    "deltaTime": 1,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      65,
+      80
+    ],
+    "delay": 1.8939395833333335,
+    "duration": 62.50000624998938
+  },
+  {
+    "deltaTime": 1,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      60,
+      80
+    ],
+    "delay": 1.8939395833333335,
+    "duration": 244.31820624999818
+  },
+  {
+    "deltaTime": 9,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      58,
+      80
+    ],
+    "delay": 17.04545625,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      60,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      63,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      58,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      60,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      63,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 214.01517291666823
+  },
+  {
+    "deltaTime": 7,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      65,
+      80
+    ],
+    "delay": 13.257577083333334,
+    "duration": 1725.3789604166814
+  },
+  {
+    "deltaTime": 0,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      70,
+      80
+    ],
+    "delay": 0,
+    "duration": 1725.3789604166814
+  },
+  {
+    "deltaTime": 409,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      62,
+      80
+    ],
+    "delay": 774.6212895833334,
+    "duration": 106.06061666665482
+  },
+  {
+    "deltaTime": 4,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      63,
+      80
+    ],
+    "delay": 7.575758333333334,
+    "duration": 321.96972916665254
+  },
+  {
+    "deltaTime": 10,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      62,
+      80
+    ],
+    "delay": 18.939395833333336,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      53,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      55,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      65,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 429.92428541666595
+  },
+  {
+    "deltaTime": 13,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      74,
+      80
+    ],
+    "delay": 24.621214583333334,
+    "duration": 1941.288072916679
+  },
+  {
+    "deltaTime": 55,
+    "type": 9,
+    "channel": 0,
+    "data": [
+      67,
+      80
+    ],
+    "delay": 104.16667708333334,
+    "duration": 5179.924760416674
+  },
+  {
+    "deltaTime": 1,
+    "type": 255,
+    "delay": 1.8939395833333335,
+    "duration": 0
+  }
+]
