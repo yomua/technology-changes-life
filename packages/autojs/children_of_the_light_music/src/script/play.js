@@ -73,7 +73,7 @@ function runPress({ data }) {
 
       // 按压时间至少持续 1s
       if (!pressDuration) {
-        pressDuration = 1;
+        pressDuration = 1000;
       }
 
       return [delay, pressDuration, [+x, +y]];

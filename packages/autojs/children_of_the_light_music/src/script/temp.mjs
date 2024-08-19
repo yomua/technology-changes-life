@@ -46,7 +46,7 @@ function getLrcToLyricData(lrcContent) {
 /** 将 midi 文件转成具有 delay, key 的数据
  * @param {Uint8Array} midiSourceBytes
  * @param { {bpmMS:number } } config
- * @returns { {delay: numberMS, key: numberGameKey}[] }
+ * @returns { {delay: numberMS, key: numberGameKey, pressDuration:numberMS}[] }
  */
 function getMidiToKeyData(midiSourceBytes, config) {
   if (!midiSourceBytes) {
@@ -118,7 +118,7 @@ function getMidiToKeyData(midiSourceBytes, config) {
    * }
    */
   const midiData = MidiParser.parse(base64String);
-  // fs.writeFileSync(`${assetDir}/midiData.json`, JSON.stringify(midiData));
+  fs.writeFileSync(`${assetDir}/midiData.json`, JSON.stringify(midiData));
 
   // 计算 bpmMS
   midiData.track.forEach((track) => {
@@ -133,13 +133,19 @@ function getMidiToKeyData(midiSourceBytes, config) {
   const melodyTrack = findPotentialMelodyTracks(midiData);
 
   // 得到每个音符的 delay 和 duration, 并删除音符松开事件
+
   const filterTrackEvent = parseMidiEvents(
     melodyTrack.event,
     midiData.timeDivision,
     bpmMS
   );
+  fs.writeFileSync(
+    `${assetDir}/filterTrackEvent.json`,
+    JSON.stringify(filterTrackEvent)
+  );
 
   // 过滤掉非音符事件, 以及过滤掉不在游戏键范围内的音符
+  // 注意: 可能会有 type===8 的 mid文件
   const filterNonNoteEvent = filterTrackEvent.filter(
     (item) =>
       Array.isArray(item.data) &&
@@ -152,10 +158,10 @@ function getMidiToKeyData(midiSourceBytes, config) {
   );
 
   /** 将 midi 数据中的 deltaTime 转成 delay (ms), 以及将 data[0] 音符转成游戏按键
-   * @returns { { "delay": numberMS, "key": numberGameKey }[] }
+   * @returns { { "delay": numberMS, "key": numberGameKey, pressDuration:numberMS }[] }
    */
-  const changeDeltaDataToDelayAndKey = filterNonNoteEvent.map((item) => {
-    const { deltaTime, type, channel, data } = item;
+  const changeToNeedMusicJSONData = filterNonNoteEvent.map((item) => {
+    const { deltaTime, type, channel, data, delay, duration } = item;
 
     let gameKey = null; // 1 ~ 15
 
@@ -172,12 +178,13 @@ function getMidiToKeyData(midiSourceBytes, config) {
     });
 
     return {
-      delay: item.delay,
+      delay,
       key: gameKey,
+      pressDuration: duration,
     };
   });
 
-  return changeDeltaDataToDelayAndKey;
+  return changeToNeedMusicJSONData;
 }
 
 /** 将 midi 文件转成的按键数据, 以多个项的累计延迟间m 是否小于歌词时间划分为一组, 最后插入到通过 lrc 文件解析的歌词数据中
@@ -285,14 +292,15 @@ function findPotentialMelodyTracks(midData) {
  *  }[]
  * }
  */
-function parseMidiEvents(trackEvent, timeDivision, secondsPerBeat) {
-  const tickDuration = secondsPerBeat / timeDivision;
+function parseMidiEvents(trackEvent, timeDivision, msPerBeat) {
+  const tickDuration = msPerBeat / timeDivision;
+  console.log("__  tickDuration__", tickDuration);
   let accumulatedDelayTime = 0; // 累计延迟时间
   let noteOnEvents = {};
 
   return trackEvent.reduce((result, event) => {
+    // 音符按下事件
     if (event.type === 9 && event.data[1] !== 0) {
-      // 音符按下事件
       const delay = event.deltaTime * tickDuration;
       accumulatedDelayTime += delay;
       result.push({
@@ -300,8 +308,8 @@ function parseMidiEvents(trackEvent, timeDivision, secondsPerBeat) {
         type: event.type,
         channel: event.channel,
         data: event.data,
-        delay: delay,
-        duration: 0, // We'll calculate this later
+        delay: delay, // delay 只需要在按下时计算即可
+        duration: 0, // 稍后计算, 即: 音符松开时, 才计算
       });
 
       // 存储音符按下事件数据
@@ -311,6 +319,7 @@ function parseMidiEvents(trackEvent, timeDivision, secondsPerBeat) {
       };
     } else if (event.type === 9 && event.data[1] === 0) {
       // 音符松开事件
+      // 这种情况的音符松开事件, 只是为了计算刚才这个音符被按下时的 duration
       const delay = event.deltaTime * tickDuration;
       accumulatedDelayTime += delay;
 
@@ -327,6 +336,16 @@ function parseMidiEvents(trackEvent, timeDivision, secondsPerBeat) {
 
         // 当一个音符松开时, 将此音符从 active noteOnEvents 中删除
         // 因为接下来可能会有相同的音符再次按下, 以免冲突.
+        delete noteOnEvents[event.data[0]];
+      }
+    } else if (event.type === 8) {
+      // 音符松开事件
+      const delay = event.deltaTime * tickDuration;
+      accumulatedDelayTime += delay;
+      const noteOnEvent = noteOnEvents[event.data[0]];
+      if (noteOnEvent) {
+        noteOnEvent.event.duration = accumulatedDelayTime - noteOnEvent.time;
+
         delete noteOnEvents[event.data[0]];
       }
     } else {
@@ -391,19 +410,12 @@ assetMidList.forEach((midFileName) => {
     configData
   );
 
-  // fs.writeFileSync(
-  //   `${assetDir}/midiToKeyDataForNotHaveLrc.json`,
-  //   JSON.stringify(midiToKeyDataForNotHaveLrc)
-  // );
-
   let accDelayMS = 0;
 
   const notHaveLrcMusicData = midiToKeyDataForNotHaveLrc.map((keyData) => {
-    // 歌词的开始时间 time: 相当于前面的所有 delay 相加
-    // => 因为前面的延迟时间结束, 才会开始播放当前歌词
-    // 而为什么当前 delay 刚好是上一个歌词 delay 结束?
-    // => 这是因为在当前 delay 等待过程中, 上一个歌词正在播放, 而它刚好播放结束, 就是当前歌词等待结束, 这是 mid 文件中已经设置过的
-    accDelayMS += keyData.delay;
+    // 歌词的开始时间 time: 相当于前面的所有 delay 和 duration 相加
+    // => 因为前面的延迟时间和持续时间结束, 才会开始播放当前歌词
+    accDelayMS += keyData.delay + (keyData.pressDuration || 0);
 
     return {
       words: "",
