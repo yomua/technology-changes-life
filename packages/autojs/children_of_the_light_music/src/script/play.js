@@ -70,9 +70,9 @@
           delay = 20;
         }
 
-        // 按压时间至少持续 1000ms (1s)
+        // 按压时间至少持续 500ms
         if (!pressDuration) {
-          pressDuration = 1000;
+          pressDuration = 20;
         }
         return [delay, pressDuration, [+x, +y]];
       });

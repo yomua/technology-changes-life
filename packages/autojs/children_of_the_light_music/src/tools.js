@@ -1,6 +1,4 @@
 (function () {
-  importPackage(android.content);
-
   /** 得到设置的 x,y 坐标
    * @param {string} value : e.g. '500,500'
    * @returns {{x:string, y:string}}
@@ -248,6 +246,7 @@
    * @returns { 'vertical' | 'horizontal' }
    */
   function getScreenDirection() {
+    importPackage(android.content);
     if (context.getResources().getConfiguration().orientation === 1) {
       return "vertical";
     }
