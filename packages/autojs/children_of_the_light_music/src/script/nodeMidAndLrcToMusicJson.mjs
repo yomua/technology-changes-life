@@ -119,6 +119,7 @@ function getMidiToKeyData(midiSourceBytes, config) {
    * }
    */
   const midiData = MidiParser.parse(base64String);
+  fs.writeFileSync(`${assetDir}/midiData.json`, JSON.stringify(midiData));
 
   // 计算 bpmMS
   midiData.track.forEach((track) => {
