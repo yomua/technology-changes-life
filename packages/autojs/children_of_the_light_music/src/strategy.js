@@ -80,7 +80,7 @@
       });
 
       //  [ 1: '错位时空', 2: '孤勇者', ...]
-      // 索引从 1 开始
+      // i+1 目的: 更友好的显示顺序和歌词名, 用不不会理解 0: 错位时空 这样的格式的
       const musicNameOptions = musicList.map((item, i) => {
         return `${i + 1}: ${item.split(".")[0]}`;
       });

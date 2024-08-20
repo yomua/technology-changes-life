@@ -2,7 +2,7 @@
  * 读取 asset/ 下的 lrc 和 mid 文件, 并将之解析为 .json 格式, 以对应游戏按键
  * - mid 是必须的, lrc 是可选的
  * - 若没有 lrc, 则只解析 mid
- * - 若有 lrc, 则将 mid 与 lrc 合并, 将携带歌词数据
+ * - 若有 lrc, 则将 mid 与 lrc 合并, 将携带歌词数据 (不保证歌词完美对应旋律)
  */
 
 import fs from "fs";
@@ -13,7 +13,8 @@ import { parseLrc, polyfillForIn } from "../tools.js";
 import MidiParser from "midi-parser-js";
 
 const __filename = fileURLToPath(import.meta.url);
-// D:*/children_of_the_light_music
+
+// 如: D:*/children_of_the_light_music
 const rootDir = path.dirname(path.join(__filename, "../../"));
 
 const srcDir = path.resolve(rootDir, "src");
@@ -43,9 +44,9 @@ function getLrcToLyricData(lrcContent) {
   return result;
 }
 
-/** 将 midi 文件转成具有 delay, key 的数据
+/** 将 midi 文件转成具有 delay, key, pressDuration 的数据
  * @param {Uint8Array} midiSourceBytes
- * @param { {bpmMS:number } } config
+ * @param { {bpmMS:number } } config 项目配置 /config.json
  * @returns { {delay: numberMS, key: numberGameKey, pressDuration:numberMS}[] }
  */
 function getMidiToKeyData(midiSourceBytes, config) {
@@ -87,7 +88,7 @@ function getMidiToKeyData(midiSourceBytes, config) {
     15: [84, 96, 108, 120], // 最高音 do
   };
 
-  // 得到所有可以映射游戏键的 midi 音符
+  // 所有映射游戏键的 midi 音符, 方便判断音符编码是否有被游戏键映射
   const allMidiNoteMapGameKey = [];
   polyfillForIn(midiNoteMapGameKey, (key, value) => {
     value.forEach((midiNote) => {
@@ -176,7 +177,7 @@ function getMidiToKeyData(midiSourceBytes, config) {
   return changeToNeedMusicJSONData;
 }
 
-/** 将 midi 文件转成的按键数据, 以多个项的累计延迟间m 是否小于歌词时间划分为一组, 最后插入到通过 lrc 文件解析的歌词数据中
+/** 将 midi 文件转成的按键数据, 以多个项的累计延迟间(ms) + pressDuration(ms) 是否小于歌词时间划分为一组, 最后插入到通过 lrc 文件解析的歌词数据中
  * @param {{words:string, time:numberMS, data:[] }[]} lyricData
  * @param {{delay:numberMS, key:number}[]} midiToKeyData
  * @returns { {words:string, time:numberMS, data:[numberDelayMS, {delay:numberMS, key:number}][] }[]  }
@@ -196,7 +197,7 @@ function mergeMidiKeyDataAndMusicData(lyricData, midiToKeyData) {
     // 累计延迟时间
     accumulatedDelay += keyInfo.delay + (keyInfo.pressDuration || 1000);
 
-    // 直到多个项累计延迟时间 > 歌词时间, 就划分为一组
+    // 直到多个项累计延迟时间+按键持续时间 > 歌词时间, 就划分为一组
     // => 移动 currentIndex, 即: 移动到下一句歌词, 准备插入接下来的按键数据
     while (
       currentIndex <= result.length - 1 && // 当索引 小于等于 最后一句歌词
@@ -325,11 +326,17 @@ function parseMidiEvents(trackEvent, timeDivision, msPerBeat) {
       // 当音符松开时, 取出刚才此音符的按下事件数据
       const noteOnEvent = noteOnEvents[event.data[0]];
       if (noteOnEvent) {
-        // 此音符按下事件的索引(包括), 到此索引(包括)之前, 所有项累计起来的延迟时间
-        // 相当于: 所有截至到当前音符松开(包括)的累计延迟时间 - 此音符按下事件时的索引(包括), 到此索引(包括)之前, 所有项累计起来的延迟时间
+        // 所有截至到当前音符松开(包括)的累计延迟时间 - 此音符按下事件时的索引(包括), 到此索引(包括)之前, 所有项累计起来的延迟时间
         // => 就能得出此音符, 从开始按下, 到松开时, 历经了多少时间
-        // => 不会计算此音符按下事件时的延迟时间, 因为当延迟时间表示的是, 具体上一个音符事件, 应该延迟多久按下.
-        // => 会计算松开时的延迟时间
+        // 以图来理解, 如下:
+        // { delay:1, },                        ──┐
+        // { delay:2,  type:9, data:[72, 80]},    │ ------按下
+        // { delay:3  },                          │
+        // { delay:4,  type:9, data:[72, 0] },  ──┘ ------松开
+        // 得到音符 72 到松开时, 累计的所有 delay, 得出 1+2+3+4=10
+        // 得到音符 72 到按下时, 累计的所有 delay, 得出 1+2=3
+        // => 所有累计 - 按下累计 => 10-3=7, 求出音符 72 持续了 7
+
         const duration = accumulatedDelayTime - noteOnEvent.time;
         noteOnEvent.event.duration = duration;
 
@@ -374,7 +381,10 @@ assetMidList.forEach((midFileName) => {
   // mid 文件有没有对应的 lrc 文件
   const isHaveLrc = assetLrcList.includes(`${name}.lrc`);
 
+  // 得到 mid base64 数据
   const midFileBase64 = fs.readFileSync(`${assetDir}/${name}.mid`, "base64");
+
+  // 得到配置
   const configData = JSON.parse(
     fs.readFileSync(`${rootDir}/config.json`, "utf-8")
   );
@@ -400,6 +410,7 @@ assetMidList.forEach((midFileName) => {
   const notHaveLrcMusicData = midiToKeyDataForNotHaveLrc.map((keyData) => {
     // 歌词的开始时间 time: 相当于前面的所有 delay 和 duration 相加
     // => 因为前面的延迟时间和持续时间结束, 才会开始播放当前歌词
+    // => 这是因为我们模拟按键, 采用的是 press 方法, Ref: https://docs.hamibot.com/reference/coordinatesBasedAutomation#press-x-y-duration
     accDelayMS += keyData.delay + (keyData.pressDuration || 0);
 
     return {

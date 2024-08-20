@@ -23,6 +23,7 @@
 
   const {
     setViewDrag,
+    getScreenDirection,
     runScriptWithVariable,
     emitSpecifiedScriptEvent,
   } = require(`${srcDir}/tools.js`);
@@ -70,6 +71,7 @@
         </horizontal>
         {/* 显示歌词信息 */}
         <text textColor="#dd7694" id="currentLyricText" />
+
         <button id="closeButton" text="关闭" />
       </vertical>
     </frame>
@@ -78,8 +80,13 @@
   // 保证此线程存活, 类似心跳检测.
   currentUiTimerId = setInterval(() => {}, 1000);
 
-  // 对于横屏游戏：高 = x，宽 = y
-  seekBarView.setPosition(device.height / 2 - seekBarWidth, device.width / 2);
+  if (getScreenDirection() === "vertical") {
+    // 默认情况下, x 和 y 对应手机竖着的时候的宽和高
+    seekBarView.setPosition(device.width / 2 - seekBarWidth, device.height / 2);
+  } else {
+    // 对于横屏游戏：高 = x，宽 = y
+    seekBarView.setPosition(device.height / 2 - seekBarWidth, device.width / 2);
+  }
 
   seekBarView.frame.getBackground().setAlpha(100);
 

@@ -68,7 +68,7 @@
           delay = 0;
         }
 
-        // 按压时间至少持续 1s
+        // 按压时间至少持续 1000ms (1s)
         if (!pressDuration) {
           pressDuration = 1000;
         }

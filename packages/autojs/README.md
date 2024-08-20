@@ -14,7 +14,16 @@ hamibot 基于 Auto.js 实现, 在 [hamibot Github](https://github.com/hamibot/h
 
 - [Github Auto.js 例子 2](https://github.com/xiaorui16888/AutoJsCode/tree/main)
 
+
+Android
+
+hamibot 是支持更底层的 Android 操作的, 相关文档参见以下列出来的目录, 
+
+如果以下未列出, 则随便点进去一个链接, 参考左边的目录就有更多的文档了.
+
 - [Android UI 相关文档](https://docs.hamibot.com/reference/ui#ui)
+
+- [Android Util](https://developer.android.com/reference/android/util/package-summary)
 
 # hamibot 注意事项
 

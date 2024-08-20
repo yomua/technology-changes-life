@@ -1,4 +1,6 @@
 (function () {
+  importPackage(android.content);
+
   /** 得到设置的 x,y 坐标
    * @param {string} value : e.g. '500,500'
    * @returns {{x:string, y:string}}
@@ -241,13 +243,26 @@
     });
   }
 
+  /**
+   *
+   * @returns { 'vertical' | 'horizontal' }
+   */
+  function getScreenDirection() {
+    if (context.getResources().getConfiguration().orientation === 1) {
+      return "vertical";
+    }
+
+    return "horizontal";
+  }
+
   module.exports = {
-    parseLrc: parseLrc,
-    setViewDrag: setViewDrag,
-    polyfillForIn: polyfillForIn,
-    getXYForStorage: getXYForStorage,
-    runScriptWithVariable: runScriptWithVariable,
-    isFloatyWindowVisible: isFloatyWindowVisible,
-    emitSpecifiedScriptEvent: emitSpecifiedScriptEvent,
+    getScreenDirection,
+    parseLrc,
+    setViewDrag,
+    polyfillForIn,
+    getXYForStorage,
+    runScriptWithVariable,
+    isFloatyWindowVisible,
+    emitSpecifiedScriptEvent,
   };
 })();

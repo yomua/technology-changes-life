@@ -11,6 +11,7 @@
 
   const { setViewDrag, runScriptWithVariable } = require(`${srcDir}/tools.js`);
 
+  // 读取 asset/*.mid 文件, 转为可识别, 播放的 JSON 文件.
   runScriptWithVariable(`${srcDir}/script/midAndLrcToMusicJson.js`, {
     useShareData,
   });

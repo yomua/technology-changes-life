@@ -1,15 +1,16 @@
-/**
+/** 只能在 hamibot 环境下运行
  * 读取 asset/ 下的 lrc 和 mid 文件, 并将之解析为自定义的 .json 数据格式, 参见: asset/json数据格式说明.js
  * - mid 是必须的, lrc 是可选的
  * - 若没有 lrc, 则只解析 mid
- * - 若有 lrc, 则把 mid 与 lrc 合并, 将携带歌词数据
+ * - 若有 lrc, 则把 mid 与 lrc 合并, 将携带歌词数据 (不保证歌词完美对应旋律)
  */
 (function () {
   const { useShareData } = engines.myEngine().execArgv;
 
   const { srcDir, packagesDir, rootDir, assetDir } = useShareData();
 
-  const { parseLrc, polyfillForIn } = require(srcDir + "/tools.js");
+  const { parseLrc, polyfillForIn } = require(`${srcDir}/tools.js`);
+
   const MidiParser = require(`${packagesDir}/midi-parset-js/midi-parset-js.js`);
 
   /** 将 lrc 转换为具有 words 和 time 的数据
@@ -34,9 +35,9 @@
     return result;
   }
 
-  /** 将 midi 文件转成具有 delay, key 的数据
+  /** 将 midi 文件转成具有 delay, key, pressDuration 的数据
    * @param {Uint8Array} midiSourceBytes
-   * @param { {bpmMS:number } } config
+   * @param { {bpmMS:number } } config 项目配置 /config.json
    * @returns { {delay: numberMS, key: numberGameKey}[] }
    */
   function getMidiToKeyData(midiSourceBytes, config) {
@@ -72,15 +73,14 @@
       11: [89, 101, 113, 125],
       12: [91, 103, 115, 127],
       13: [93, 105, 117],
-      14: [95, 107, 119], // 高音
+      14: [95, 107, 119], // 高音; 13(A10), 14(B10) 没有对应的 midi 音符编码
 
       // 70~84
       15: [84, 96, 108, 120], // 最高音 do
     };
 
-    // 所有映射游戏键的 midi 音符
+    // 所有映射游戏键的 midi 音符, 方便判断音符编码是否有被游戏键映射
     const allMidiNoteMapGameKey = [];
-
     polyfillForIn(midiNoteMapGameKey, (key, value) => {
       value.forEach((midiNote) => {
         allMidiNoteMapGameKey.push(midiNote);
@@ -169,7 +169,7 @@
     return changeToNeedMusicJSONData;
   }
 
-  /** 将 midi 文件转成的按键数据, 以多个项的累计延迟间m 是否小于歌词时间划分为一组, 最后插入到通过 lrc 文件解析的歌词数据中
+  /** 将 midi 文件转成的按键数据, 以多个项的累计延迟间(ms) + pressDuration(ms) 是否小于歌词时间划分为一组, 最后插入到通过 lrc 文件解析的歌词数据中
    * @param {{words:string, time:numberMS, data:[] }[]} lyricData
    * @param {{delay:numberMS, key:number}[]} midiToKeyData
    * @returns { {words:string, time:numberMS, data:[numberDelayMS, {delay:numberMS, key:number}][] }[]  }
@@ -189,7 +189,7 @@
       // 累计延迟时间
       accumulatedDelay += keyInfo.delay;
 
-      // 直到多个项累计延迟时间 > 歌词时间, 就划分为一组
+      // 直到多个项累计延迟时间+按键持续时间 > 歌词时间, 就划分为一组
       // => 移动 currentIndex, 即: 移动到下一句歌词, 准备插入接下来的按键数据
       while (
         currentIndex <= result.length - 1 && // 当索引 小于等于 最后一句歌词
@@ -288,7 +288,7 @@
    */
   function parseMidiEvents(trackEvent, timeDivision, msPerBeat) {
     const tickDuration = msPerBeat / timeDivision;
-    let accumulatedDelayTime = 0; // 累计延迟时间
+    let accumulatedDelayTime = 0; // 累计延迟时间, 包括音符按下, 松开, 以及非音符事件的延迟时间
     let noteOnEvents = {};
 
     return trackEvent.reduce((result, event) => {
@@ -322,11 +322,17 @@
         // 当音符松开时, 取出刚才此音符的按下事件数据
         const noteOnEvent = noteOnEvents[event.data[0]];
         if (noteOnEvent) {
-          // 此音符按下事件的索引(包括), 到此索引(包括)之前, 所有项累计起来的延迟时间
-          // 相当于: 所有截至到当前音符松开(包括)的累计延迟时间 - 此音符按下事件时的索引(包括), 到此索引(包括)之前, 所有项累计起来的延迟时间
+          // 所有截至到当前音符松开(包括)的累计延迟时间 - 此音符按下事件时的索引(包括), 到此索引(包括)之前, 所有项累计起来的延迟时间
           // => 就能得出此音符, 从开始按下, 到松开时, 历经了多少时间
-          // => 不会计算此音符按下事件时的延迟时间, 因为当延迟时间表示的是, 具体上一个音符事件, 应该延迟多久按下.
-          // => 会计算松开时的延迟时间
+          // 以图来理解, 如下:
+          // { delay:1, },                        ──┐
+          // { delay:2,  type:9, data:[72, 80]},    │ ------按下
+          // { delay:3  },                          │
+          // { delay:4,  type:9, data:[72, 0] },  ──┘ ------松开
+          // 得到音符 72 到松开时, 累计的所有 delay, 得出 1+2+3+4=10
+          // 得到音符 72 到按下时, 累计的所有 delay, 得出 1+2=3
+          // => 所有累计 - 按下累计 => 10-3=7, 求出音符 72 持续了 7
+
           const duration = accumulatedDelayTime - noteOnEvent.time;
           noteOnEvent.event.duration = duration;
 
@@ -371,7 +377,10 @@
     // mid 文件有没有对应的 lrc 文件
     const isHaveLrc = assetLrcList.includes(`${name}.lrc`);
 
+    // 得到 mid base64 数据
     const midFileBase64 = files.readBytes(`${assetDir}/${name}.mid`);
+
+    // 得到配置
     const configData = JSON.parse(files.read(`${rootDir}/config.json`));
 
     if (isHaveLrc) {
@@ -394,10 +403,9 @@
     let accDelayMS = 0;
 
     const notHaveLrcMusicData = midiToKeyDataForNotHaveLrc.map((keyData) => {
-      // 歌词的开始时间 time: 相当于前面的所有 delay 相加
-      // => 因为前面的延迟时间结束, 才会开始播放当前歌词
-      // 而为什么当前 delay 刚好是上一个歌词 delay 结束?
-      // => 这是因为在当前 delay 等待过程中, 上一个歌词正在播放, 而它刚好播放结束, 就是当前歌词等待结束, 这是 mid 文件中已经设置过的
+      // 歌词的开始时间 time: 相当于前面的所有 delay 和 duration 相加
+      // => 因为前面的延迟时间和持续时间结束, 才会开始播放当前歌词
+      // => 这是因为我们模拟按键, 采用的是 press 方法, Ref: https://docs.hamibot.com/reference/coordinatesBasedAutomation#press-x-y-duration
       accDelayMS += keyData.delay + (keyData.pressDuration || 0);
 
       return {
