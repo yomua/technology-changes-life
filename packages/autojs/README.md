@@ -18,20 +18,12 @@ hamibot 基于 Auto.js 实现, 在 [hamibot Github](https://github.com/hamibot/h
 
 # hamibot 注意事项
 
-- 支持模板字符串
-
-如:
+- 不支持可选链 (`?.`) 和 空值运算符 (`??`)
 
 ```js
-const str = "test " + name; // 支持
-```
+obj?.yomua; // 不支持
 
-- 不支持可选链 (`?.`) 和 `??`
-
-```js
-obj?.a; // 不支持
-
-obj.a ?? "1" ??  // 不支持;
+obj.yomua ?? "yomua" ??  // 不支持;
 ```
 
 - 不支持 `for...in`
@@ -45,6 +37,27 @@ for (const key in {}) {
 - 不支持解构赋值有默认值
 
 ```js
-const { a = 1, b = 2 } = obj; // 不支持
+const { name = "yomua" } = obj; // 不支持
 const { a, b } = obj; // 支持
+```
+
+- 不支持 class
+
+```js
+class Yomua {} // 不支持
+```
+
+- 同一个函数中, `if` 没有作用域
+
+```js
+// 下面的 name 在 hamibot 中会报重复声明错误
+function goYomua() {
+  if (conditionA) {
+    const name = "yomua1";
+  }
+
+  if (conditionB) {
+    const name = "yomua2";
+  }
+}
 ```

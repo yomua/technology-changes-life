@@ -22,6 +22,26 @@
 
   或者你使用 constant 时, 不会报错, 那就使用它.
 
+## 如何解决脚本和脚本之间的变量冲突
+
+将文件使用自执行函数包裹, 形成一个单独的作用域, 如:
+
+```js
+// store/index.js
+
+(function () {
+  const store = {};
+  module.exports = store;
+})();
+```
+
+```js
+// src/index.js 或 /hamibot.js
+const store = {}; // 不会重复声明的错误, 如果 store/index.js 不使用自执行函数, 则会报重复声明错误
+```
+
+注意: 这无法解决一个脚本里面的变量冲突问题
+
 # 解析 .mid 文件
 
 Ref: 此项目解析 [mid 文件规范说明](https://github.com/colxi/midi-parser-js/wiki/MIDI-File-Format-Specifications)

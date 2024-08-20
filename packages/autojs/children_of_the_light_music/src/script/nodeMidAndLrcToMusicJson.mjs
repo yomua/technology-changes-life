@@ -294,7 +294,6 @@ function findPotentialMelodyTracks(midData) {
  */
 function parseMidiEvents(trackEvent, timeDivision, msPerBeat) {
   const tickDuration = msPerBeat / timeDivision;
-  console.log("__  tickDuration__", tickDuration);
   let accumulatedDelayTime = 0; // 累计延迟时间
   let noteOnEvents = {};
 
