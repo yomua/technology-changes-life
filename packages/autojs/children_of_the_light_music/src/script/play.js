@@ -65,14 +65,15 @@
         const { x, y } = getXYForStorage(store.get(musicKeyPrefix + key));
 
         if (!delay) {
-          delay = 0;
+          // 对于某些游戏, 延迟如果为 0, 则有可能导致无法触发按压, 如: 心动小镇
+          // 这里的 20 是我测出来的最小延迟时间, 再小就可能导致无法触发按压
+          delay = 20;
         }
 
         // 按压时间至少持续 1000ms (1s)
         if (!pressDuration) {
           pressDuration = 1000;
         }
-
         return [delay, pressDuration, [+x, +y]];
       });
 

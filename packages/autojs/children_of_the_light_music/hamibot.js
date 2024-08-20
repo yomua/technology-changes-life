@@ -18,23 +18,6 @@ function useShareData() {
   };
 }
 
-gestures([0, 500, [280, 802]]);
-gestures([0, 500, [568, 788]]);
-gestures([0, 500, [768, 804]]);
-gestures([0, 500, [1088, 970]]);
-gestures([0, 500, [1331, 795]]);
-gestures([0, 500, [1615, 787]]);
-gestures([0, 500, [1844, 755]]);
-gestures([0, 500, [2098, 754]]);
-gestures([0, 500, [399, 982]]);
-gestures([0, 500, [645, 967]]);
-gestures([0, 500, [962, 958]]);
-gestures([0, 500, [1198, 946]]);
-gestures([0, 500, [1421, 954]]);
-gestures([0, 500, [1706, 968]]);
-gestures([0, 500, [1945, 955]]);
-
-
 const dir = `${useShareData().srcDir}/index.js`;
 
 if (files.exists(dir)) {
