@@ -39,12 +39,14 @@
 
     // 初始时, 按键数量为 0
     let clickCount = 0;
+    console.log('__  初始化clickCount', clickCount)
 
     coordinateCanvas.canvasId.on("draw", () => {
       coordinateCanvas.canvasId.setOnTouchListener(function (view, event) {
         switch (event.getAction()) {
           case event.ACTION_DOWN:
             clickCount += 1; // 点击一次, 则当前按键 + 1
+            console.log("__  clickCount__", clickCount);
             let nextKey = clickCount + 1; // 下一个按键是几
             coordinateText.setSize(-1, -1); // 全屏
             coordinateText.coordinateModifyTextId.setText(
@@ -52,6 +54,7 @@
             );
             const x = parseInt(event.getX());
             const y = parseInt(event.getY());
+            console.log("_坐标位置", x, y);
             store.put(musicKeyPrefix + clickCount, x + "," + y);
             if (clickCount === maxClickScreenCount) {
               // 不使用 coordinateCanvas.close()，因为导入 coordinateCanvas 其实就一个实例，关闭后，canvas 就没了，
