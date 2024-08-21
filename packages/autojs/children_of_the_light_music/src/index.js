@@ -1,6 +1,7 @@
 /**
  *   Copyright (c) 2022 yomua. All rights reserved.
  */
+
 (function () {
   // 是否开启了无障碍
   auto();

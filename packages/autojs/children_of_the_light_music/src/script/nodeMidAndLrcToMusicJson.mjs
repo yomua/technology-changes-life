@@ -1,5 +1,5 @@
 /** 这是使用 node 环境的, 版本需要在 16.15.0 及以上
- * 读取 asset/ 下的 lrc 和 mid 文件, 并将之解析为 .json 格式, 以对应游戏按键
+ * 读取 asset/ 下的 lrc 和 mid 文件, 并将之解析为描述音乐和按键的 .json 格式, 参见: doc/json数据格式说明.md
  * - mid 是必须的, lrc 是可选的
  * - 若没有 lrc, 则只解析 mid
  * - 若有 lrc, 则将 mid 与 lrc 合并, 将携带歌词数据 (不保证歌词完美对应旋律)
@@ -55,42 +55,13 @@ function getMidiToKeyData(midiSourceBytes, config) {
     return;
   }
 
-  let { bpmMS } = config || {
+  let { bpmMS, musicNoteMapGameKey15 } = config || {
     bpmMS: 500,
-  };
-
-  /** 游戏键和 midi 音符映射: https://blog.csdn.net/hans_yu/article/details/113818152
-   * key: 游戏键; value: 音符编码
-   * Cn Dn En Fn Gn An Bn
-   * => C 代表 do, 以此类推 -> do re mi fa so la xi 或者 1 2 3 4 5 6 7
-   * => n 代表音阶, 比如: C0, C1, C2, 都是 do, 只不过音阶不同
-   */
-  const midiNoteMapGameKey = {
-    // 低音: do ~ si
-    1: [36, 48, 60, 72], // 把 C3 ~ C6 的 do 认为是低音
-    2: [38, 50, 62, 74],
-    3: [40, 52, 64, 76],
-    4: [41, 53, 65, 77],
-    5: [43, 55, 67, 79],
-    6: [45, 57, 69, 81],
-    7: [47, 59, 71, 83], // 低音
-
-    // 高音: do ~ si
-    8: [84, 96, 108, 120], // C7 ~ C10 do 认为是高音
-    9: [86, 98, 110, 122],
-    10: [88, 100, 112, 124],
-    11: [89, 101, 113, 125],
-    12: [91, 103, 115, 127],
-    13: [93, 105, 117],
-    14: [95, 107, 119], // 高音
-
-    // 70~84
-    15: [84, 96, 108, 120], // 最高音 do
   };
 
   // 所有映射游戏键的 midi 音符, 方便判断音符编码是否有被游戏键映射
   const allMidiNoteMapGameKey = [];
-  polyfillForIn(midiNoteMapGameKey, (key, value) => {
+  polyfillForIn(musicNoteMapGameKey15, (key, value) => {
     value.forEach((midiNote) => {
       allMidiNoteMapGameKey.push(midiNote);
     });
@@ -156,13 +127,8 @@ function getMidiToKeyData(midiSourceBytes, config) {
 
     let gameKey = null; // 1 ~ 15
 
-    // timeDivision: 每个拍子(即一个四分音符)被分为多少个 (假如: 480个) ticks
-    // deltaTime: 表示几个 ticks
-    // 那每个 ticks 是多少毫秒?
-    // => bpmMS / timeDivision = 每个 tick 多少毫秒
-    // const delay = deltaTime * (bpmMS / midiData.timeDivision);
-
-    polyfillForIn(midiNoteMapGameKey, (key, value) => {
+    polyfillForIn(musicNoteMapGameKey15, (key, value) => {
+      // midi 编码是否包含在指定 key 的 value 中, 如果包含, 则此 key 就是 gameKey
       if (value.includes(data[0])) {
         gameKey = +key; // key: number
       }
@@ -275,7 +241,7 @@ function findPotentialMelodyTracks(midData) {
   return midData.track[data[0].trackIndex];
 }
 
-/** 解析音轨事件数据: 计算每个音符的 duration(ms) 和 delay(ms),
+/** 解析音轨事件数据: 计算每个音符的 duration(ms) 和 delay(ms), 并删除所有音符松开事件
  * 由于音符有了 duration, 所以就不需要再保留音符松开事件
  * => type === 8 或 type === 9 && data[1] === 0 即为音符松开事件
  *
@@ -302,14 +268,14 @@ function parseMidiEvents(trackEvent, timeDivision, msPerBeat) {
   return trackEvent.reduce((result, event) => {
     // 音符按下事件
     if (event.type === 9 && event.data[1] !== 0) {
-      const delay = event.deltaTime * tickDuration;
-      accumulatedDelayTime += delay;
+      const changeDeltaTimeToDelay = event.deltaTime * tickDuration;
+      accumulatedDelayTime += changeDeltaTimeToDelay;
       result.push({
         deltaTime: event.deltaTime,
         type: event.type,
         channel: event.channel,
         data: event.data,
-        delay: delay, // delay 只需要在按下时计算即可
+        delay: changeDeltaTimeToDelay, // changeDeltaTimeToDelay 只需要在按下时计算即可
         duration: 0, // 稍后计算, 即: 音符松开时, 才计算
       });
 
@@ -321,8 +287,8 @@ function parseMidiEvents(trackEvent, timeDivision, msPerBeat) {
     } else if ((event.type === 9 && event.data[1] === 0) || event.type === 8) {
       // 音符松开事件
       // 这种情况的音符松开事件, 只是为了计算刚才这个音符被按下时的 duration
-      const delay = event.deltaTime * tickDuration;
-      accumulatedDelayTime += delay;
+      const changeDeltaTimeToDelay = event.deltaTime * tickDuration;
+      accumulatedDelayTime += changeDeltaTimeToDelay;
 
       // 当音符松开时, 取出刚才此音符的按下事件数据
       const noteOnEvent = noteOnEvents[event.data[0]];
@@ -337,7 +303,6 @@ function parseMidiEvents(trackEvent, timeDivision, msPerBeat) {
         // 得到音符 72 到松开时, 累计的所有 delay, 得出 1+2+3+4=10
         // 得到音符 72 到按下时, 累计的所有 delay, 得出 1+2=3
         // => 所有累计 - 按下累计 => 10-3=7, 求出音符 72 持续了 7
-
         const duration = accumulatedDelayTime - noteOnEvent.time;
         noteOnEvent.event.duration = duration;
 
@@ -347,14 +312,14 @@ function parseMidiEvents(trackEvent, timeDivision, msPerBeat) {
       }
     } else {
       // 无音符事件(按下, 松开)，只需添加它们并计算延迟即可
-      const delay = event.deltaTime * tickDuration;
-      accumulatedDelayTime += delay;
+      const changeDeltaTimeToDelay = event.deltaTime * tickDuration;
+      accumulatedDelayTime += changeDeltaTimeToDelay;
       result.push({
         deltaTime: event.deltaTime,
         type: event.type,
         channel: event.channel,
         data: event.data,
-        delay: delay,
+        delay: changeDeltaTimeToDelay,
         duration: 0, // 非音符事件，不需要计算延迟
       });
     }
@@ -406,17 +371,19 @@ assetMidList.forEach((midFileName) => {
     configData
   );
 
-  let accDelayMS = 0;
+  let accTimeMS = 0;
 
   const notHaveLrcMusicData = midiToKeyDataForNotHaveLrc.map((keyData) => {
     // 歌词的开始时间 time: 相当于前面的所有 delay 和 duration 相加
     // => 因为前面的延迟时间和持续时间结束, 才会开始播放当前歌词
     // => 这是因为我们模拟按键, 采用的是 press 方法, Ref: https://docs.hamibot.com/reference/coordinatesBasedAutomation#press-x-y-duration
-    accDelayMS += keyData.delay + (keyData.pressDuration || 0);
+    accTimeMS +=
+      (keyData.delay || configData.minDelayMS) +
+      (keyData.pressDuration || configData.defaultPressDurationMS);
 
     return {
       words: "",
-      time: accDelayMS / 1000, // time 单位是秒
+      time: accTimeMS / 1000, // time 单位是秒
       data: [[0, keyData]],
     };
   });

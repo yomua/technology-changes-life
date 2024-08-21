@@ -46,7 +46,7 @@
       events.emit("closeTimer");
     }
 
-    emitSpecifiedScriptEvent(srcDir + "/script/play.js", "closePlay");
+    emitSpecifiedScriptEvent(`${srcDir}/script/play.js`, "closePlay");
 
     threads.shutDownAll();
 
@@ -72,6 +72,8 @@
         {/* 显示歌词信息 */}
         <text textColor="#dd7694" id="currentLyricText" />
 
+      
+
         <button id="closeButton" text="关闭" />
       </vertical>
     </frame>
@@ -80,6 +82,7 @@
   // 保证此线程存活, 类似心跳检测.
   currentUiTimerId = setInterval(() => {}, 1000);
 
+  // 设置播放音乐组件位置
   if (getScreenDirection() === "vertical") {
     // 默认情况下, x 和 y 对应手机竖着的时候的宽和高
     seekBarView.setPosition(device.width / 2 - seekBarWidth, device.height / 2);
@@ -122,8 +125,7 @@
     // 拖动前, 按下
     onStartTrackingTouch: function (seekBar) {
       // 用来结束上一轮播放
-      emitSpecifiedScriptEvent(srcDir + "/script/play.js", "closePlay");
-      events.emit("closeTimer");
+      events.emit("closePlay");
     },
 
     // 拖动后, 松手
@@ -204,7 +206,7 @@
       if (currentSelectedIndex !== -1) {
         // 只保留索引 (包含) 后的歌词数据
         const newMusicData = musicDataObj.slice(currentSelectedIndex);
-        runScriptWithVariable(srcDir + "/script/play.js", {
+        runScriptWithVariable(`${srcDir}/script/play.js`, {
           keyData: newMusicData,
           useShareData,
         });
@@ -216,6 +218,8 @@
           currentLyricTime += 1;
           // 播放完毕
           if (currentLyricTime >= lrcTotalTime) {
+            emitSpecifiedScriptEvent(`${srcDir}/script/play.js`, "closePlay");
+            threads.shutDownAll();
             events.emit("closeTimer");
           }
 

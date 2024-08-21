@@ -156,6 +156,7 @@
       if (!scriptExecution) {
         return;
       }
+
       if (String(scriptExecution.source) === dir) {
         scriptExecution.emit(eventName, config);
       }
@@ -241,8 +242,7 @@
     });
   }
 
-  /**
-   *
+  /** 获取屏幕方向
    * @returns { 'vertical' | 'horizontal' }
    */
   function getScreenDirection() {

@@ -1,14 +1,21 @@
-const midiJSONFormat = {
+# 描述
+
+此文件用来说明, 当 `.mid` 文件通过 `packages/midi-parset-js` 被转为 JSON 数据后, 它的数据格式代表什么
+
+更多详细参见: [Midi 字段说明](https://m.midifan.com/article_body.php?id=7360)
+
+```js
+{
   //0: 1个轨道 2:有多个轨道 3: 0 和 1合并
   formatType: 1, // 0 | 1 | 2
 
-  // 2 个轨道
+  // 轨道数量
   tracks: 2,
 
-  // 每个四分音符（即一个节拍）被分为 480 个 ticks
+  // 每个四分音符（即一个节拍）被分为几个 ticks
   timeDivision: 480,
 
-  // 轨道
+  // 轨道, 每个子对象表示一个轨道
   track: [
     {
       // 轨道1 的事件
@@ -65,3 +72,4 @@ const midiJSONFormat = {
     },
   ],
 };
+```
