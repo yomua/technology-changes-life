@@ -24,7 +24,6 @@
     }
     exit();
   }
-
   events.on("closePlay", handleExit);
 
   // 开子线程的目的：触发 closePlay 事件时，不必等待 musicData 执行完
