@@ -7,7 +7,8 @@
 (function () {
   const { useShareData } = engines.myEngine().execArgv;
 
-  const { srcDir, packagesDir, rootDir, assetDir } = useShareData();
+  const { srcDir, packagesDir, rootDir, assetDir, store, storeKey } =
+    useShareData();
 
   const { parseLrc, polyfillForIn } = require(`${srcDir}/tools.js`);
 
@@ -46,13 +47,30 @@
       return;
     }
 
-    let { bpmMS, musicNoteMapGameKeyBlackKeyAnd22Key } = config || {
+    const selectedEnabledKey = store.get(storeKey.enabledKeyValue);
+
+    let {
+      bpmMS,
+      musicNoteMapGameKey15,
+      musicNoteMapGameKey22,
+      musicNoteMapGameKeyBlackKeyAnd22Key,
+    } = config || {
       bpmMS: 500,
     };
 
+    let activeMusicNoteMapGameKey = musicNoteMapGameKey15;
+
+    if (selectedEnabledKey === "enabledKey15") {
+      activeMusicNoteMapGameKey = musicNoteMapGameKey15;
+    } else if (selectedEnabledKey === "enabledKey22") {
+      activeMusicNoteMapGameKey = musicNoteMapGameKey22;
+    } else if (selectedEnabledKey === "enabledKey22AndBlackKey") {
+      activeMusicNoteMapGameKey = musicNoteMapGameKeyBlackKeyAnd22Key;
+    }
+
     // 所有映射游戏键的 midi 音符, 方便判断音符编码是否有被游戏键映射
     const allMidiNoteMapGameKey = [];
-    polyfillForIn(musicNoteMapGameKeyBlackKeyAnd22Key, (key, value) => {
+    polyfillForIn(activeMusicNoteMapGameKey, (key, value) => {
       value.forEach((midiNote) => {
         allMidiNoteMapGameKey.push(midiNote);
       });
@@ -118,7 +136,7 @@
 
       let gameKey = null; // 1 ~ 15
 
-      polyfillForIn(musicNoteMapGameKeyBlackKeyAnd22Key, (key, value) => {
+      polyfillForIn(activeMusicNoteMapGameKey, (key, value) => {
         // midi 编码是否包含在指定 key 的 value 中, 如果包含, 则此 key 就是 gameKey
         if (value.includes(data[0])) {
           gameKey = +key; // key: number
@@ -193,10 +211,6 @@
    * }} tractEvent
    */
   function findPotentialMelodyTracks(midData) {
-    if (midData.track.length === 1) {
-      return midData.track[0].event;
-    }
-
     const data = midData.track
       .map((track, index) => {
         // 得到所有音符音符按下事件, 不包含音符松开事件
@@ -342,7 +356,7 @@
   );
 
   // 通过 mid 文件, lrc 文件, 得到 json 游戏按键数据和歌词数据 (若有)
-  assetMidList.forEach((midFileName) => {
+  assetMidList.forEach((midFileName, index) => {
     const name = midFileName.split(".")[0];
 
     // mid 文件有没有对应的 lrc 文件
@@ -361,6 +375,10 @@
       const midiToKeyData = getMidiToKeyData(midFileBase64, configData);
       const mergeData = mergeMidiKeyDataAndMusicData(lyricData, midiToKeyData);
       files.write(`${assetDir}/${name}.json`, JSON.stringify(mergeData));
+
+      if (index === assetMidList.length - 1) {
+        alert("所有文件解析成功");
+      }
 
       return;
     }
@@ -392,5 +410,9 @@
       `${assetDir}/${name}.json`,
       JSON.stringify(notHaveLrcMusicData)
     );
+    
+    if (index === assetMidList.length - 1) {
+      alert("所有文件解析成功");
+    }
   });
 })();

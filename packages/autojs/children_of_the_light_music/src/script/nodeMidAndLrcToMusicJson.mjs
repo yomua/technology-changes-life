@@ -55,13 +55,13 @@ function getMidiToKeyData(midiSourceBytes, config) {
     return;
   }
 
-  let { bpmMS, musicNoteMapGameKey15 } = config || {
+  let { bpmMS, musicNoteMapGameKeyBlackKeyAnd22Key } = config || {
     bpmMS: 500,
   };
 
   // 所有映射游戏键的 midi 音符, 方便判断音符编码是否有被游戏键映射
   const allMidiNoteMapGameKey = [];
-  polyfillForIn(musicNoteMapGameKey15, (key, value) => {
+  polyfillForIn(musicNoteMapGameKeyBlackKeyAnd22Key, (key, value) => {
     value.forEach((midiNote) => {
       allMidiNoteMapGameKey.push(midiNote);
     });
@@ -90,7 +90,7 @@ function getMidiToKeyData(midiSourceBytes, config) {
    * }
    */
   const midiData = MidiParser.parse(base64String);
-  fs.writeFileSync(`${assetDir}/midiData.json`, JSON.stringify(midiData));
+  // fs.writeFileSync(`${assetDir}/midiData.json`, JSON.stringify(midiData));
 
   // 计算 bpmMS
   midiData.track.forEach((track) => {
@@ -127,7 +127,7 @@ function getMidiToKeyData(midiSourceBytes, config) {
 
     let gameKey = null; // 1 ~ 15
 
-    polyfillForIn(musicNoteMapGameKey15, (key, value) => {
+    polyfillForIn(musicNoteMapGameKeyBlackKeyAnd22Key, (key, value) => {
       // midi 编码是否包含在指定 key 的 value 中, 如果包含, 则此 key 就是 gameKey
       if (value.includes(data[0])) {
         gameKey = +key; // key: number
@@ -202,10 +202,6 @@ function mergeMidiKeyDataAndMusicData(lyricData, midiToKeyData) {
  * }} tractEvent
  */
 function findPotentialMelodyTracks(midData) {
-  if (midData.track.length === 1) {
-    return midData.track[0].event;
-  }
-
   const data = midData.track
     .map((track, index) => {
       // 得到所有音符音符按下事件, 不包含音符松开事件

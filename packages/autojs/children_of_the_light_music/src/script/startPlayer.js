@@ -125,7 +125,7 @@
     // 拖动前, 按下
     onStartTrackingTouch: function (seekBar) {
       // 用来结束上一轮播放
-      events.emit("closePlay");
+      events.emit("closeTimer");
     },
 
     // 拖动后, 松手

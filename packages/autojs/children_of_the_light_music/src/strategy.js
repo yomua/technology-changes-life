@@ -1,7 +1,5 @@
 (function () {
-  const { srcDir, assetDir, musicKeyPrefix, store } = useShareData();
-
-  const maxClickScreenCount = store.get("maxClickScreenCount");
+  const { srcDir, assetDir, musicKeyPrefix, store, storeKey } = useShareData();
 
   const {
     isFloatyWindowVisible,
@@ -41,6 +39,8 @@
     // 初始时, 按键数量为 0
     let clickCount = 0;
 
+    const maxClickScreenCount = store.get(storeKey.maxClickScreenCount);
+
     coordinateCanvas.canvasId.on("draw", () => {
       coordinateCanvas.canvasId.setOnTouchListener(function (view, event) {
         switch (event.getAction()) {
@@ -74,7 +74,7 @@
   }
 
   const functionStrategy = {
-    开始弹奏: () => {
+    开始弹奏: (view) => {
       // 读取 asset/ *.json 文件
       const musicList = files.listDir(assetDir, function (name) {
         return name.endsWith(".json") && files.isFile(assetDir + "/" + name);
@@ -106,7 +106,9 @@
       });
     },
 
-    坐标修改: () => {
+    坐标修改: (view) => {
+      const maxClickScreenCount = store.get(storeKey.maxClickScreenCount);
+
       confirm(`请确认 ${maxClickScreenCount} 个键坐标`, "", (success) => {
         if (!success) {
           return;
@@ -118,7 +120,7 @@
       });
     },
 
-    退出脚本: () => {
+    退出脚本: (view) => {
       confirm("确认是否退出脚本？", "", (success) => {
         if (!success) {
           return;
