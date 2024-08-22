@@ -46,13 +46,13 @@
       return;
     }
 
-    let { bpmMS, musicNoteMapGameKey15 } = config || {
+    let { bpmMS, musicNoteMapGameKeyBlackKeyAnd22Key } = config || {
       bpmMS: 500,
     };
 
     // 所有映射游戏键的 midi 音符, 方便判断音符编码是否有被游戏键映射
     const allMidiNoteMapGameKey = [];
-    polyfillForIn(musicNoteMapGameKey15, (key, value) => {
+    polyfillForIn(musicNoteMapGameKeyBlackKeyAnd22Key, (key, value) => {
       value.forEach((midiNote) => {
         allMidiNoteMapGameKey.push(midiNote);
       });
@@ -118,7 +118,7 @@
 
       let gameKey = null; // 1 ~ 15
 
-      polyfillForIn(musicNoteMapGameKey15, (key, value) => {
+      polyfillForIn(musicNoteMapGameKeyBlackKeyAnd22Key, (key, value) => {
         // midi 编码是否包含在指定 key 的 value 中, 如果包含, 则此 key 就是 gameKey
         if (value.includes(data[0])) {
           gameKey = +key; // key: number
@@ -193,6 +193,10 @@
    * }} tractEvent
    */
   function findPotentialMelodyTracks(midData) {
+    if (midData.track.length === 1) {
+      return midData.track[0].event;
+    }
+
     const data = midData.track
       .map((track, index) => {
         // 得到所有音符音符按下事件, 不包含音符松开事件
@@ -257,6 +261,7 @@
     let accumulatedDelayTime = 0; // 累计延迟时间, 包括音符按下, 松开, 以及非音符事件的延迟时间
     let noteOnEvents = {};
 
+    // 对 result 累计
     return trackEvent.reduce((result, event) => {
       // 音符按下事件
       if (event.type === 9 && event.data[1] !== 0) {

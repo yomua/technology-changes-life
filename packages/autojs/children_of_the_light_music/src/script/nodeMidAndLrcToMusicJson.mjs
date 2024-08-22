@@ -202,6 +202,10 @@ function mergeMidiKeyDataAndMusicData(lyricData, midiToKeyData) {
  * }} tractEvent
  */
 function findPotentialMelodyTracks(midData) {
+  if (midData.track.length === 1) {
+    return midData.track[0].event;
+  }
+
   const data = midData.track
     .map((track, index) => {
       // 得到所有音符音符按下事件, 不包含音符松开事件
@@ -265,6 +269,7 @@ function parseMidiEvents(trackEvent, timeDivision, msPerBeat) {
   let accumulatedDelayTime = 0; // 累计延迟时间
   let noteOnEvents = {};
 
+  // 对 result 累计
   return trackEvent.reduce((result, event) => {
     // 音符按下事件
     if (event.type === 9 && event.data[1] !== 0) {
@@ -330,17 +335,17 @@ function parseMidiEvents(trackEvent, timeDivision, msPerBeat) {
 
 const assetFileList = fs.readdirSync(assetDir);
 
-// 歌词是可选的, 没有歌词也能有按键数据
+// 获取 .lrc 文件
 const assetLrcList = assetFileList.filter((fileName) =>
   fileName.endsWith(".lrc")
 );
 
-// 必须有 mid 文件才能自动解析对应的游戏按键数据
+// 获取 .mid 文件
 const assetMidList = assetFileList.filter((fileName) =>
   fileName.endsWith(".mid")
 );
 
-// 通过 mid 文件, lrc 文件, 得到 json 游戏按键数据和歌词数据 (若有)
+// 通过 mid 文件, lrc 文件, 得到游戏按键的 json 数据和歌词数据 (若有)
 assetMidList.forEach((midFileName) => {
   const name = midFileName.split(".")[0];
 

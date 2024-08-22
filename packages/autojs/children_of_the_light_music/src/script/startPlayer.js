@@ -23,6 +23,7 @@
 
   const {
     setViewDrag,
+    keepThreadAlive,
     getScreenDirection,
     runScriptWithVariable,
     emitSpecifiedScriptEvent,
@@ -48,6 +49,8 @@
 
     emitSpecifiedScriptEvent(`${srcDir}/script/play.js`, "closePlay");
 
+    floaty.closeAll();
+
     threads.shutDownAll();
 
     exit();
@@ -72,15 +75,12 @@
         {/* 显示歌词信息 */}
         <text textColor="#dd7694" id="currentLyricText" />
 
-      
-
         <button id="closeButton" text="关闭" />
       </vertical>
     </frame>
   );
 
-  // 保证此线程存活, 类似心跳检测.
-  currentUiTimerId = setInterval(() => {}, 1000);
+  currentUiTimerId = keepThreadAlive();
 
   // 设置播放音乐组件位置
   if (getScreenDirection() === "vertical") {

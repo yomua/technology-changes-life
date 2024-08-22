@@ -1,6 +1,7 @@
 (function () {
-  const { srcDir, assetDir, musicKeyPrefix, maxClickScreenCount, store } =
-    useShareData();
+  const { srcDir, assetDir, musicKeyPrefix, store } = useShareData();
+
+  const maxClickScreenCount = store.get("maxClickScreenCount");
 
   const {
     isFloatyWindowVisible,
@@ -48,7 +49,7 @@
             let nextKey = clickCount + 1; // 下一个按键是几
             coordinateText.setSize(-1, -1); // 全屏
             coordinateText.coordinateModifyTextId.setText(
-              "当前点击的键为: " + clickCount + ", " + "下一个键为: " + nextKey
+              `当前点击的键为: ${clickCount}, 下一个键为: ${nextKey}`
             );
             const x = parseInt(event.getX());
             const y = parseInt(event.getY());
@@ -80,7 +81,7 @@
       });
 
       //  [ 1: '错位时空', 2: '孤勇者', ...]
-      // i+1 目的: 更友好的显示顺序和歌词名, 用不不会理解 0: 错位时空 这样的格式的
+      // i+1 目的: 更友好的显示顺序和歌词名, 用户不会理解 0: 错位时空 这样的格式的
       const musicNameOptions = musicList.map((item, i) => {
         return `${i + 1}: ${item.split(".")[0]}`;
       });

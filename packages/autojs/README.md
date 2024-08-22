@@ -6,6 +6,18 @@ hamibot 的 JavaScript 基于 [Rhino 引擎](https://p-bakker.github.io/rhino/)
 
 [Hamibot 的 UI](https://docs.hamibot.com/reference/ui) 系统来自于 Android
 
+## ui 模式
+
+如果要使用 ui.xx 方法, 则必须处在 UI 模式, 否则无法使用.
+
+且 UI 模式是是类似于打一个 app, 处于全屏, 组件都在这全屏上, 
+
+这不像悬浮窗那样, 是一个窗口, 能操控到其他除窗口之外的内容.
+
+不过悬浮窗需要的 xml 内容, 是和 ui 模式中的 xml 都是同一个.
+
+Ref: [Hamibot UI](https://docs.hamibot.com/reference/ui) \
+
 # Ref
 
 代码例子:

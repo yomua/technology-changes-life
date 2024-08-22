@@ -25,19 +25,27 @@
   /** 控制指定的 view 是否可见
    * @param { floatyWindow } view
    * @param { boolean } visible
+   * @param { boolean } isFlexSize true: 悬浮窗大小根据内容大小而定; false: 悬浮窗占满全屏
    */
-  function isFloatyWindowVisible(view, visible) {
+  function isFloatyWindowVisible(view, visible, isFlexSize) {
     if (!view) {
       toast("不存在的 View");
       return;
     }
     if (!visible) {
       view.setTouchable(false);
+      // 为什么不使用 view.close(); 因为这会导致悬浮窗这个实例直接被关闭, 后续如果再显示, 只能重新创建此实例,
+      // 即: 必须重新再 floaty.rawWindow()
       view.setSize(1, 1); // 不能是 0,0 这不生效, 设置为 1,1 即可
       return;
     }
     view.setTouchable(true);
-    view.setSize(-1, -1);
+
+    if (!!isFlexSize) {
+      view.setSize(-2, -2);
+    } else {
+      view.setSize(-1, -1);
+    }
   }
 
   /** 执行指定脚本文件, 并携带参数
@@ -254,12 +262,21 @@
     return "horizontal";
   }
 
+  /** 保持线程存活
+   * 否则线程执行完代码, 就会关闭, 悬浮窗, 实例什么的都会消失
+   */
+  function keepThreadAlive() {
+    const id = setInterval(() => {}, 999999999);
+    return id;
+  }
+
   module.exports = {
-    getScreenDirection,
     parseLrc,
+    keepThreadAlive,
     setViewDrag,
     polyfillForIn,
     getXYForStorage,
+    getScreenDirection,
     runScriptWithVariable,
     isFloatyWindowVisible,
     emitSpecifiedScriptEvent,

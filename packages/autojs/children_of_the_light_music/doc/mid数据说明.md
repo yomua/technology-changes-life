@@ -46,6 +46,10 @@
          * data[1]: 按下音符的用力程度
          */
 
+        /** 如何求每个音符的持续时间?
+         * 从按下音符开始(不包含) 至 音符松开(包含), 这中间的时间就是此音符的持续时间
+         */ 
+
         { deltaTime: 0, type: 255, metaType: 3, data: "\u0000" },
         { deltaTime: 0, type: 255, metaType: 88, data: [4, 2, 24, 8] },
         { deltaTime: 0, type: 255, metaType: 89, data: 64768 },
