@@ -19,12 +19,6 @@
 
   keepThreadAlive();
 
-  alert("解析文件中, 请稍后操作...");
-  // 读取 asset/*.mid 文件, 转为可识别, 播放的 JSON 文件.
-  runScriptWithVariable(`${srcDir}/script/midAndLrcToMusicJson.js`, {
-    useShareData,
-  });
-
   const logo = floaty.rawWindow(
     <img
       id="logoId"
@@ -40,6 +34,12 @@
   // 可拖拽 logo, 点击时打开功能选择
   setViewDrag(logo, logo.logoId, function () {
     isFloatyWindowVisible(functionLayout, true);
+  });
+
+  toast("解析文件中, 请稍后操作...");
+  // 读取 asset/*.mid 文件, 转为可识别, 播放的 JSON 文件.
+  runScriptWithVariable(`${srcDir}/script/midAndLrcToMusicJson.js`, {
+    useShareData,
   });
 
   // 功能视图
@@ -119,6 +119,7 @@
 
   // Switch 监听
   functionLayout[keyMode.key15].on("click", function (event) {
+    isFloatyWindowVisible(functionLayout, false);
     // 设置最大按键数
     store.put(storeKey.maxKeyNum, event.checked ? keyModeNum.key15 : 0);
     // 设置选则的 keyMode
@@ -126,24 +127,26 @@
     // 3 个 Switch 状态互斥
     functionLayout[keyMode.key22].checked = false;
     functionLayout[keyMode.key22AndBlackKey].checked = false;
-    alert("重新解析文件中, 请稍后操作...");
+    toast("重新解析文件中, 请稍后操作...");
     runScriptWithVariable(`${srcDir}/script/midAndLrcToMusicJson.js`, {
       useShareData,
     });
   });
 
   functionLayout[keyMode.key22].on("click", function (event) {
+    isFloatyWindowVisible(functionLayout, false);
     store.put(storeKey.maxKeyNum, event.checked ? keyModeNum.key22 : 0);
     store.put(storeKey.selectedKeyMode, keyMode.key22);
     functionLayout[keyMode.key15].checked = false;
     functionLayout[keyMode.key22AndBlackKey].checked = false;
-    alert("重新解析文件中, 请稍后操作...");
+    toast("重新解析文件中, 请稍后操作...");
     runScriptWithVariable(`${srcDir}/script/midAndLrcToMusicJson.js`, {
       useShareData,
     });
   });
 
   functionLayout[keyMode.key22AndBlackKey].on("click", function (event) {
+    isFloatyWindowVisible(functionLayout, false);
     store.put(
       storeKey.maxKeyNum,
       event.checked ? keyModeNum.key22AndBlackKey : 0
@@ -151,7 +154,7 @@
     store.put(storeKey.selectedKeyMode, keyMode.key22AndBlackKey);
     functionLayout[keyMode.key15].checked = false;
     functionLayout[keyMode.key22].checked = false;
-    alert("重新解析文件中, 请稍后操作...");
+    toast("重新解析文件中, 请稍后操作...");
     runScriptWithVariable(`${srcDir}/script/midAndLrcToMusicJson.js`, {
       useShareData,
     });

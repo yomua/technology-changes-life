@@ -377,7 +377,7 @@
       files.write(`${assetDir}/${name}.json`, JSON.stringify(mergeData));
 
       if (index === assetMidList.length - 1) {
-        alert("所有文件解析成功");
+        toast("所有文件解析成功");
       }
 
       return;
@@ -412,7 +412,7 @@
     );
 
     if (index === assetMidList.length - 1) {
-      alert("所有文件解析成功");
+      toast("所有文件解析成功");
     }
   });
 })();
