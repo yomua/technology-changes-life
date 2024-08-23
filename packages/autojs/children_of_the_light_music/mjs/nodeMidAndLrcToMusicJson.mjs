@@ -9,13 +9,13 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 
-import { parseLrc, polyfillForIn } from "../tools.js";
+import { parseLrc, polyfillForIn } from "../src/tools.js";
 import MidiParser from "midi-parser-js";
 
 const __filename = fileURLToPath(import.meta.url);
 
 // 如: D:*/children_of_the_light_music
-const rootDir = path.dirname(path.join(__filename, "../../"));
+const rootDir = path.dirname(path.join(__filename, "../"));
 
 const srcDir = path.resolve(rootDir, "src");
 const packagesDir = path.resolve(rootDir, "packages");
@@ -125,7 +125,7 @@ function getMidiToKeyData(midiSourceBytes, config) {
   const changeToNeedMusicJSONData = filterNonNoteEvent.map((item) => {
     const { deltaTime, type, channel, data, delay, duration } = item;
 
-    let gameKey = null; // 1 ~ 15
+    let gameKey = null;
 
     polyfillForIn(musicNoteMapGameKeyBlackKeyAnd22Key, (key, value) => {
       // midi 编码是否包含在指定 key 的 value 中, 如果包含, 则此 key 就是 gameKey

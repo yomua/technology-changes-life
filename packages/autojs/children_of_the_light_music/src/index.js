@@ -1,12 +1,12 @@
 /**
- *   Copyright (c) 2022 yomua. All rights reserved.
+ *   Copyright © 2022 yomua. All rights reserved.
  */
 
 (function () {
   // 是否开启了无障碍
   auto();
 
-  const { srcDir, store, storeKey } = useShareData();
+  const { srcDir, store, storeKey, keyMode, keyModeNum } = useShareData();
 
   const { useFunctionStrategy } = require(`${srcDir}/strategy.js`);
 
@@ -25,13 +25,9 @@
     useShareData,
   });
 
-  // 拥有的功能
-  const functionOptions = ["1.开始弹奏", "2.坐标修改", "3.退出脚本"];
-
-  // 创建 logo
-  const scriptIconView = floaty.rawWindow(
+  const logo = floaty.rawWindow(
     <img
-      id="scriptIconId"
+      id="logoId"
       w="40"
       h="40"
       tint="#dd7694"
@@ -39,47 +35,56 @@
     />
   );
 
-  scriptIconView.setPosition(0, device.width ? device.width / 2 : 500);
+  logo.setPosition(0, device.width ? device.width / 2 : 500);
 
-  const indexLayout = floaty.rawWindow(
-    <vertical id="mask" padding="50" gravity="center">
+  // 可拖拽 logo, 点击时打开功能选择
+  setViewDrag(logo, logo.logoId, function () {
+    isFloatyWindowVisible(functionLayout, true);
+  });
+
+  // 功能视图
+  const functionLayout = floaty.rawWindow(
+    <vertical padding="50" gravity="center">
       <scroll>
         <vertical
-          id="container"
           bg="#ffffff"
           padding="16"
           gravity="center"
           borderWidth="5"
           borderColor="gray"
         >
-          <text id="title" color="#000000" textStyle="bold" textSize="20sp">
+          <text color="#000000" textStyle="bold" textSize="20sp">
             请选择功能
           </text>
 
           <vertical>
-            <text id="indexStart" textSize="16sp" marginTop="20">
+            <text id="start" textSize="16sp" marginTop="20">
               1. 开始弹奏
             </text>
-            <text id="indexCoordinate" textSize="16sp" marginTop="20">
+            <text id="coordinate" textSize="16sp" marginTop="20">
               2. 坐标修改
             </text>
-            <text id="indexExit" textSize="16sp" marginTop="20">
+            <text id="exit" textSize="16sp" marginTop="20">
               3. 退出脚本
             </text>
           </vertical>
 
           <vertical marginTop="20">
             <horizontal marginTop="15">
-              <Switch checked id="enabledKey15" />
-              <text>启用 15 键</text>
+              <Switch checked id={keyMode.key15} />
+              <text>启用 {keyModeNum.key15} 键</text>
             </horizontal>
+
             <horizontal marginTop="15">
-              <Switch id="enabledKey22" />
-              <text>启用 22 键</text>
+              <Switch id={keyMode.key22} />
+              <text>启用 {keyModeNum.key22} 键</text>
             </horizontal>
+
             <horizontal marginTop="15">
-              <Switch id="enabledKey22AndBlackKey" />
-              <text>启用 22 键 + 15 黑键</text>
+              <Switch id={keyMode.key22AndBlackKey} />
+              <text>
+                启用 {keyModeNum.key22} 键 + {keyModeNum.key15} 黑键
+              </text>
             </horizontal>
           </vertical>
 
@@ -90,55 +95,62 @@
       </scroll>
     </vertical>
   );
-  isFloatyWindowVisible(indexLayout, false);
-  // 默认启用 15 游戏键映射
-  store.put(storeKey.maxClickScreenCount, 15);
-  store.put(storeKey.enabledKeyValue, "enabledKey15");
 
-  // 功能监听
-  indexLayout.indexStart.on("click", function () {
-    isFloatyWindowVisible(indexLayout, false);
-    useFunctionStrategy("开始弹奏")(indexLayout);
+  isFloatyWindowVisible(functionLayout, false);
+
+  // 默认启用 key15 游戏键映射
+  store.put(storeKey.maxKeyNum, keyModeNum.key15);
+  store.put(storeKey.selectedKeyMode, keyMode.key15);
+
+  // 功能按钮监听
+  functionLayout.start.on("click", function () {
+    isFloatyWindowVisible(functionLayout, false);
+    useFunctionStrategy("开始弹奏")(functionLayout);
   });
 
-  indexLayout.indexCoordinate.on("click", function () {
-    isFloatyWindowVisible(indexLayout, false);
-    useFunctionStrategy("坐标修改")(indexLayout);
+  functionLayout.coordinate.on("click", function () {
+    isFloatyWindowVisible(functionLayout, false);
+    useFunctionStrategy("坐标修改")(functionLayout);
   });
 
-  indexLayout.indexExit.on("click", function () {
-    useFunctionStrategy("退出脚本")(indexLayout);
+  functionLayout.exit.on("click", function () {
+    useFunctionStrategy("退出脚本")(functionLayout);
   });
 
-  // switch 监听
-  indexLayout.enabledKey15.on("click", function (event) {
-    // 最大按键数量
-    store.put(storeKey.maxClickScreenCount, event.checked ? 15 : 0);
-    store.put(storeKey.enabledKeyValue, "enabledKey15");
-    indexLayout.enabledKey22.checked = false;
-    indexLayout.enabledKey22AndBlackKey.checked = false;
+  // Switch 监听
+  functionLayout[keyMode.key15].on("click", function (event) {
+    // 设置最大按键数
+    store.put(storeKey.maxKeyNum, event.checked ? keyModeNum.key15 : 0);
+    // 设置选则的 keyMode
+    store.put(storeKey.selectedKeyMode, keyMode.key15);
+    // 3 个 Switch 状态互斥
+    functionLayout[keyMode.key22].checked = false;
+    functionLayout[keyMode.key22AndBlackKey].checked = false;
     alert("重新解析文件中, 请稍后操作...");
     runScriptWithVariable(`${srcDir}/script/midAndLrcToMusicJson.js`, {
       useShareData,
     });
   });
 
-  indexLayout.enabledKey22.on("click", function (event) {
-    store.put(storeKey.maxClickScreenCount, event.checked ? 22 : 0);
-    store.put(storeKey.enabledKeyValue, "enabledKey22");
-    indexLayout.enabledKey15.checked = false;
-    indexLayout.enabledKey22AndBlackKey.checked = false;
+  functionLayout[keyMode.key22].on("click", function (event) {
+    store.put(storeKey.maxKeyNum, event.checked ? keyModeNum.key22 : 0);
+    store.put(storeKey.selectedKeyMode, keyMode.key22);
+    functionLayout[keyMode.key15].checked = false;
+    functionLayout[keyMode.key22AndBlackKey].checked = false;
     alert("重新解析文件中, 请稍后操作...");
     runScriptWithVariable(`${srcDir}/script/midAndLrcToMusicJson.js`, {
       useShareData,
     });
   });
 
-  indexLayout.enabledKey22AndBlackKey.on("click", function (event) {
-    store.put(storeKey.maxClickScreenCount, event.checked ? 22 + 15 : 0);
-    store.put(storeKey.enabledKeyValue, "enabledKey22AndBlackKey");
-    indexLayout.enabledKey15.checked = false;
-    indexLayout.enabledKey22.checked = false;
+  functionLayout[keyMode.key22AndBlackKey].on("click", function (event) {
+    store.put(
+      storeKey.maxKeyNum,
+      event.checked ? keyModeNum.key22AndBlackKey : 0
+    );
+    store.put(storeKey.selectedKeyMode, keyMode.key22AndBlackKey);
+    functionLayout[keyMode.key15].checked = false;
+    functionLayout[keyMode.key22].checked = false;
     alert("重新解析文件中, 请稍后操作...");
     runScriptWithVariable(`${srcDir}/script/midAndLrcToMusicJson.js`, {
       useShareData,
@@ -146,29 +158,7 @@
   });
 
   // 关闭窗口
-  indexLayout.closeWindow.on("click", function () {
-    isFloatyWindowVisible(indexLayout, false);
-  });
-
-  setViewDrag(scriptIconView, scriptIconView.scriptIconId, function () {
-    isFloatyWindowVisible(indexLayout, true);
-
-    // dialogs.select("请选择功能", functionOptions, (selectedIndex) => {
-    //   if (selectedIndex === -1) {
-    //     return;
-    //   }
-
-    //   switch (functionOptions[selectedIndex].split(".")[1]) {
-    //     case "开始弹奏":
-    //       useFunctionStrategy("开始弹奏")();
-    //       break;
-    //     case "坐标修改":
-    //       useFunctionStrategy("坐标修改")();
-    //       break;
-    //     case "退出脚本":
-    //       useFunctionStrategy("退出脚本")();
-    //       break;
-    //   }
-    // });
+  functionLayout.closeWindow.on("click", function () {
+    isFloatyWindowVisible(functionLayout, false);
   });
 })();

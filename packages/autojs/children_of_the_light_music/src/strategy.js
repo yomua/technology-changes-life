@@ -1,5 +1,5 @@
 (function () {
-  const { srcDir, assetDir, musicKeyPrefix, store, storeKey } = useShareData();
+  const { srcDir, assetDir, keyPrefix, store, storeKey } = useShareData();
 
   const {
     isFloatyWindowVisible,
@@ -21,25 +21,26 @@
     </vertical>
   );
 
-  // 首先隐藏坐标画布
+  // 首先隐藏坐标和文本
   isFloatyWindowVisible(coordinateCanvas, false);
   isFloatyWindowVisible(coordinateText, false);
 
   // 设置坐标
-  // 存储用户按15个键的位置 => { key: musicKeyPrefix + 1~15, value: '100,100' }
   function setCoordinate() {
     if (!coordinateCanvas || !coordinateCanvas.canvasId) {
       toast("请检查 coordinateCanvas 是否存在！");
       return;
     }
+
     isFloatyWindowVisible(coordinateCanvas, true);
+
     isFloatyWindowVisible(coordinateText, true);
     coordinateText.coordinateModifyTextId.setText("请确认坐标");
 
     // 初始时, 按键数量为 0
     let clickCount = 0;
 
-    const maxClickScreenCount = store.get(storeKey.maxClickScreenCount);
+    const maxKeyNum = store.get(storeKey.maxKeyNum);
 
     coordinateCanvas.canvasId.on("draw", () => {
       coordinateCanvas.canvasId.setOnTouchListener(function (view, event) {
@@ -53,8 +54,8 @@
             );
             const x = parseInt(event.getX());
             const y = parseInt(event.getY());
-            store.put(musicKeyPrefix + clickCount, x + "," + y);
-            if (clickCount === maxClickScreenCount) {
+            store.put(keyPrefix + clickCount, x + "," + y);
+            if (clickCount === maxKeyNum) {
               // 不使用 coordinateCanvas.close()，因为导入 coordinateCanvas 其实就一个实例，关闭后，canvas 就没了，
               // 在重启脚本前就无法使用坐标修改了。
               isFloatyWindowVisible(coordinateCanvas, false);
@@ -107,9 +108,9 @@
     },
 
     坐标修改: (view) => {
-      const maxClickScreenCount = store.get(storeKey.maxClickScreenCount);
+      const maxKeyNum = store.get(storeKey.maxKeyNum);
 
-      confirm(`请确认 ${maxClickScreenCount} 个键坐标`, "", (success) => {
+      confirm(`请确认 ${maxKeyNum} 个键坐标`, "", (success) => {
         if (!success) {
           return;
         }

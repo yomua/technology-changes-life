@@ -1,4 +1,5 @@
 /** 此文件用来: 按下指定的键 */
+
 (function () {
   const { keyData: musicData, useShareData } = engines.myEngine().execArgv;
 
@@ -12,7 +13,7 @@
     exit();
   }
 
-  const { srcDir, rootDir, musicKeyPrefix, store, storeKey } = useShareData();
+  const { srcDir, rootDir, keyPrefix, store } = useShareData();
 
   const { getXYForStorage } = require(`${srcDir}/tools.js`);
 
@@ -60,15 +61,14 @@
 
       if (typeof word[0] === "number") {
         sleep(word[0]);
-        // 延迟操作结束后, 只保留需要按下的键
+        // 延迟操作结束后, 只保留需要按下的键, 好操作
         word = word.filter((v) => typeof v !== "number");
       }
 
       const currentPressKey = word.map((obj) => {
-        // key : 1,2,3,4 ~ 15
         let { delay, pressDuration, key } = obj;
 
-        const { x, y } = getXYForStorage(store.get(musicKeyPrefix + key));
+        const { x, y } = getXYForStorage(store.get(`${keyPrefix}${key}`));
 
         // 设置最小延迟
         if (!delay || delay < config.minDelayMS) {

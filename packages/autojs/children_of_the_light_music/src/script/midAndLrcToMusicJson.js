@@ -7,7 +7,7 @@
 (function () {
   const { useShareData } = engines.myEngine().execArgv;
 
-  const { srcDir, packagesDir, rootDir, assetDir, store, storeKey } =
+  const { srcDir, packagesDir, rootDir, assetDir, store, storeKey, keyMode } =
     useShareData();
 
   const { parseLrc, polyfillForIn } = require(`${srcDir}/tools.js`);
@@ -47,7 +47,7 @@
       return;
     }
 
-    const selectedEnabledKey = store.get(storeKey.enabledKeyValue);
+    const selectedEnabledKey = store.get(storeKey.selectedKeyMode);
 
     let {
       bpmMS,
@@ -60,11 +60,11 @@
 
     let activeMusicNoteMapGameKey = musicNoteMapGameKey15;
 
-    if (selectedEnabledKey === "enabledKey15") {
+    if (selectedEnabledKey === keyMode.key15) {
       activeMusicNoteMapGameKey = musicNoteMapGameKey15;
-    } else if (selectedEnabledKey === "enabledKey22") {
+    } else if (selectedEnabledKey === keyMode.key22) {
       activeMusicNoteMapGameKey = musicNoteMapGameKey22;
-    } else if (selectedEnabledKey === "enabledKey22AndBlackKey") {
+    } else if (selectedEnabledKey === keyMode.key22AndBlackKey) {
       activeMusicNoteMapGameKey = musicNoteMapGameKeyBlackKeyAnd22Key;
     }
 
@@ -134,7 +134,7 @@
     const changeToNeedMusicJSONData = filterNonNoteEvent.map((item) => {
       const { deltaTime, type, channel, data, delay, duration } = item;
 
-      let gameKey = null; // 1 ~ 15
+      let gameKey = null;
 
       polyfillForIn(activeMusicNoteMapGameKey, (key, value) => {
         // midi 编码是否包含在指定 key 的 value 中, 如果包含, 则此 key 就是 gameKey
@@ -410,7 +410,7 @@
       `${assetDir}/${name}.json`,
       JSON.stringify(notHaveLrcMusicData)
     );
-    
+
     if (index === assetMidList.length - 1) {
       alert("所有文件解析成功");
     }
