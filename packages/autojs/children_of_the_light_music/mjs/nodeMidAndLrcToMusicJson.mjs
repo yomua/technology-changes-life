@@ -6,21 +6,11 @@
  */
 
 import fs from "fs";
-import path from "path";
-import { fileURLToPath } from "url";
 
 import { parseLrc, polyfillForIn } from "../src/tools.js";
 import MidiParser from "midi-parser-js";
 
-const __filename = fileURLToPath(import.meta.url);
-
-// 如: D:*/children_of_the_light_music
-const rootDir = path.dirname(path.join(__filename, "../"));
-
-const srcDir = path.resolve(rootDir, "src");
-const packagesDir = path.resolve(rootDir, "packages");
-const distDir = path.resolve(rootDir, "dist");
-const assetDir = path.resolve(rootDir, "asset");
+import { rootDir, assetDir } from "./constants.mjs";
 
 /** 将 lrc 转换为具有 words 和 time 的数据
  * @param {string} lrcContent
@@ -90,7 +80,7 @@ function getMidiToKeyData(midiSourceBytes, config) {
    * }
    */
   const midiData = MidiParser.parse(base64String);
-  // fs.writeFileSync(`${assetDir}/midiData.json`, JSON.stringify(midiData));
+  fs.writeFileSync(`${assetDir}/midiData.json`, JSON.stringify(midiData));
 
   // 计算 bpmMS
   midiData.track.forEach((track) => {

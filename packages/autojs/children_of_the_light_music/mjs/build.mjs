@@ -1,4 +1,4 @@
-import fs, { copyFile } from "fs";
+import fs from "fs";
 import path from "path";
 
 import { rootDir } from "./constants.mjs";

@@ -1,10 +1,8 @@
-# children_of_the_light_music
-
-## 介绍
+# 介绍
 
 游戏弹琴脚本，仅供学习使用
 
-## 使用说明
+# 使用说明
 
 1.  下载源文件: [源文件](https://gitee.com/yomua/technology-changes-life/tree/master/packages/autojs/children_of_the_light_music)
 
@@ -31,7 +29,7 @@
 
 5.  将 `children_of_the_light_music/hamibot.js` 复制到创建的脚本，点击运行
 
-## 如何添加新的音乐
+# 如何添加新的音乐
 
 - 在手机目录 `children_of_the_light_music/asset` 目录添加你下载 `.mid` 文件即可
 
@@ -41,7 +39,16 @@
 
   注意: `.lrc` 文件不是必须的, 只有你需要显示歌词时, 才需要有
 
-以下是你可能会在意的问题:
+文件目录大概如下:
+
+```bash
+  children_of_the_light_music
+    ├── asset
+      ├── 错位时空.mid
+      └── 错位时空.lrc
+```
+
+# 常见问题:
 
 - 如何确定坐标修改时, 坐标对应上了游戏键?
 
@@ -88,12 +95,3 @@
      你可以通过参考歌曲的简谱来编写
 
   5. 联系作者修改源代码, 以支持更多的 `.mid` 文件, 或自己修改源码.
-
-文件目录大概如下:
-
-```bash
-  children_of_the_light_music
-    ├── asset
-      ├── 错位时空.mid
-      └── 错位时空.lrc
-```
