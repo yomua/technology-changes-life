@@ -28,19 +28,37 @@
       src="https://webinput.nie.netease.com/img/sky/logo4.png"
     />
   );
-
   logo.setPosition(0, device.width ? device.width / 2 : 500);
-
   // 可拖拽 logo, 点击时打开功能选择
   setViewDrag(logo, logo.logoId, function () {
     isFloatyWindowVisible(functionLayout, true);
   });
 
-  toast("解析文件中, 请稍后操作...");
-  // 读取 asset/*.mid 文件, 转为可识别, 播放的 JSON 文件.
-  runScriptWithVariable(`${srcDir}/script/midAndLrcToMusicJson.js`, {
-    useShareData,
-  });
+  // 解析进度文本
+  const parseProgressText = floaty.rawWindow(
+    <frame gravity="center">
+      <text id="parseProgressTextId" textSize="22sp" color="#dd7694" />
+    </frame>
+  );
+  parseProgressText.setPosition(50, 50);
+  function runParseMid() {
+    // 显示解析进度
+    parseProgressText.parseProgressTextId.setText('');
+    isFloatyWindowVisible(parseProgressText, true);
+    toast("解析文件中, 请稍后操作...");
+    runScriptWithVariable(`${srcDir}/script/midAndLrcToMusicJson.js`, {
+      useShareData,
+      setProgressText: (text) => {
+        ui.run(() => {
+          if (text.includes("100")) {
+            isFloatyWindowVisible(parseProgressText, false);
+          }
+          parseProgressText.parseProgressTextId.setText(text);
+        });
+      },
+    });
+  }
+  runParseMid();
 
   // 功能视图
   const functionLayout = floaty.rawWindow(
@@ -95,7 +113,6 @@
       </scroll>
     </vertical>
   );
-
   isFloatyWindowVisible(functionLayout, false);
 
   // 默认启用 key15 游戏键映射
@@ -127,10 +144,7 @@
     // 3 个 Switch 状态互斥
     functionLayout[keyMode.key22].checked = false;
     functionLayout[keyMode.key22AndBlackKey].checked = false;
-    toast("重新解析文件中, 请稍后操作...");
-    runScriptWithVariable(`${srcDir}/script/midAndLrcToMusicJson.js`, {
-      useShareData,
-    });
+    runParseMid();
   });
 
   functionLayout[keyMode.key22].on("click", function (event) {
@@ -139,10 +153,8 @@
     store.put(storeKey.selectedKeyMode, keyMode.key22);
     functionLayout[keyMode.key15].checked = false;
     functionLayout[keyMode.key22AndBlackKey].checked = false;
-    toast("重新解析文件中, 请稍后操作...");
-    runScriptWithVariable(`${srcDir}/script/midAndLrcToMusicJson.js`, {
-      useShareData,
-    });
+    isFloatyWindowVisible(parseProgressText, true);
+    runParseMid();
   });
 
   functionLayout[keyMode.key22AndBlackKey].on("click", function (event) {
@@ -154,10 +166,7 @@
     store.put(storeKey.selectedKeyMode, keyMode.key22AndBlackKey);
     functionLayout[keyMode.key15].checked = false;
     functionLayout[keyMode.key22].checked = false;
-    toast("重新解析文件中, 请稍后操作...");
-    runScriptWithVariable(`${srcDir}/script/midAndLrcToMusicJson.js`, {
-      useShareData,
-    });
+    runParseMid();
   });
 
   // 关闭窗口

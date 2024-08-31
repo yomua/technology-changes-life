@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "b-music": "node ./children_of_the_light_music/mjs/build.mjs"
   },
   "keywords": [],
   "author": "",

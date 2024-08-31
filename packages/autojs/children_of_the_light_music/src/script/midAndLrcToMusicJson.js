@@ -5,7 +5,7 @@
  * - 若有 lrc, 则把 mid 与 lrc 合并, 将携带歌词数据 (不保证歌词完美对应旋律)
  */
 (function () {
-  const { useShareData } = engines.myEngine().execArgv;
+  const { useShareData, setProgressText } = engines.myEngine().execArgv;
 
   const { srcDir, packagesDir, rootDir, assetDir, store, storeKey, keyMode } =
     useShareData();
@@ -376,10 +376,13 @@
       const mergeData = mergeMidiKeyDataAndMusicData(lyricData, midiToKeyData);
       files.write(`${assetDir}/${name}.json`, JSON.stringify(mergeData));
 
+      // 解析进度
+      setProgressText(
+        (((index + 1) / assetMidList.length) * 100).toFixed(2) + "%"
+      );
       if (index === assetMidList.length - 1) {
         toast("所有文件解析成功");
       }
-
       return;
     }
 
@@ -411,6 +414,10 @@
       JSON.stringify(notHaveLrcMusicData)
     );
 
+    // 解析进度
+    setProgressText(
+      (((index + 1) / assetMidList.length) * 100).toFixed(2) + "%"
+    );
     if (index === assetMidList.length - 1) {
       toast("所有文件解析成功");
     }

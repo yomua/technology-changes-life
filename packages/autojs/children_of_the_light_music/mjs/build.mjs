@@ -47,7 +47,7 @@ if (!fs.existsSync(`${rootDir}/dist/asset`)) {
 copyDirectory(`${rootDir}/asset`, `${rootDir}/dist/asset`);
 
 // 复制 config.json
-// fs.copyFileSync(`${rootDir}/config.json`, `${rootDir}/dist/config.json`);
+fs.copyFileSync(`${rootDir}/config.json`, `${rootDir}/dist/config.json`);
 handleFile(`${rootDir}/dist/config.json`, (content) => {
   return compressCode(content);
 });
