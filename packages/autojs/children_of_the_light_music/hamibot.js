@@ -11,9 +11,7 @@ const { srcDir } = useShareData();
 var store = require(`${srcDir}/store/index.js`);
 
 function useShareData() {
-  const rootDir = files.cwd()
-    ? `${files.cwd().replace("/Hamibot", "")}/children_of_the_light_music`
-    : "/storage/emulated/0/children_of_the_light_music";
+  const rootDir = `${files.getSdcardPath()}/children_of_the_light_music`;
 
   return {
     keyPrefix: "musicKey", // 按键前缀
@@ -39,6 +37,30 @@ function useShareData() {
     assetDir: `${rootDir}/asset`,
     packagesDir: `${rootDir}/packages`,
   };
+}
+
+// 重写 require, 使得 hamibot 环境中, 支持相对路径
+function cRequire(path) {
+  console.log("__  path", path);
+  console.log("__  files", files.cwd());
+  // 获取当前线程的堆栈信息
+  const stackTrace = java.lang.Thread.currentThread().getStackTrace();
+
+  // 遍历堆栈信息，查找包含脚本路径的堆栈元素
+  for (let i = 0; i < stackTrace.length; i++) {
+    let element = stackTrace[i];
+    let fileName = element.getFileName();
+
+    // 过滤出你关心的文件路径
+    if (fileName && fileName.endsWith(".js")) {
+      // 可能需要进一步处理路径以得到完整路径
+      let callerFilePath = fileName;
+      console.log("Caller File Path: " + callerFilePath);
+      break;
+    }
+  }
+
+  // 将相对路径转换为绝对路径
 }
 
 const dir = `${srcDir}/index.js`;

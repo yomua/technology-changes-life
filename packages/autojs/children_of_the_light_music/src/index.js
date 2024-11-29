@@ -6,6 +6,8 @@
   // 是否开启了无障碍
   auto();
 
+  cRequire("./tools.js");
+
   const { srcDir, store, storeKey, keyMode, keyModeNum } = useShareData();
 
   const { useFunctionStrategy } = require(`${srcDir}/strategy.js`);
@@ -43,7 +45,7 @@
   parseProgressText.setPosition(50, 50);
   function runParseMid() {
     // 显示解析进度
-    parseProgressText.parseProgressTextId.setText('');
+    parseProgressText.parseProgressTextId.setText("");
     isFloatyWindowVisible(parseProgressText, true);
     toast("解析文件中, 请稍后操作...");
     runScriptWithVariable(`${srcDir}/script/midAndLrcToMusicJson.js`, {
